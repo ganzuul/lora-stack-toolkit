@@ -25,7 +25,7 @@ with a damped core and specialist rather than assuming `1.0 + 1.0` is safe:
 The live router's default is the first row. You can tune explicitly:
 
 ```bash
-python3 router/lora_ctl.py load geonodes --core-scale 0.75 --scale 0.50
+python3 .pi/agent/skills/lora-router/scripts/lora_ctl.py load geonodes --core-scale 0.75 --scale 0.50
 ```
 
 `load` enables only the selected specialist unless `--stack` is given.
@@ -52,9 +52,10 @@ verify scale transitions, not model-output quality.
 
 `POST /lora-adapters` applies the complete active scale set. Always include all
 preloaded adapter IDs in manual requests; omitted IDs may be disabled. Prefer
-`router/lora_ctl.py`, which reads the current adapter list, sends the complete
-payload, verifies the returned scales, and refuses to touch a model that is not
-already running in llama-swap.
+the bundled
+`.pi/agent/skills/lora-router/scripts/lora_ctl.py`, which reads the current
+adapter list, sends the complete payload, verifies the returned scales, and
+refuses to touch a model that is not already running in llama-swap.
 
 The controller recognizes the merged core by filename patterns such as
 `qwopus`. If the core adapter is named differently, set `LORA_CORE_PATTERNS`

@@ -2,7 +2,11 @@
 
 **Scope:** Reproducible engineering specification for training, assimilating, evaluating, and serving `Q8_0` LoRA adapters on `/home/nos/models/Ternary-Bonsai-2-27B-PTQ1_0.gguf` (`qwen35`, `64` blocks: `48` Gated DeltaNet + `16` Full Attention) within an **8 GiB VRAM (`RTX 2070 SUPER`, `sm_75`) / 23 GiB RAM** budget.
 
-All training/benchmark scripts live under `/home/nos/scripts/distill-lora/` and shared GGUF/SVD utilities live under `/home/nos/scripts/`. For live hot-swapping on `qwen27b`, see the Pi harness skill at `/home/nos/.pi/agent/skills/lora-router/SKILL.md` and `/home/nos/.gemini/config/skills/distill-lora/SKILL.md`.
+The bundled training/benchmark scripts live under `scripts/distill-lora/` and
+shared GGUF/SVD utilities live under `scripts/`. For live hot-swapping on
+`qwen27b`, see the bundled Pi harness skill at
+`../.pi/agent/skills/lora-router/SKILL.md`. The separate Gemini
+`distill-lora` skill is not included in this repository.
 
 ---
 
@@ -247,4 +251,4 @@ To train a new hot-swappable SME LoRA (`SQL`, `CadQuery`, `Manim`, `Lean4`, `Thr
 1. Instantiate the **4-Layer SME Mini-Framework (Section 4)** for the target domain (`schema_catalog.json` + flat canonical boundary contract + `<think>` IR convention + structural verifier `<domain>_verifier.py` returning `VerifyResult(syntax_ok, exec_ok, reward, scene_summary, error)` and strict `is_<domain>_pass(vr)`).
 2. Build a `60–150`-row single-execution-model SFT JSONL (`system`, `prompt`, `response[, reasoning]`) + an unseen `rl_tasks.jsonl` + held-out eval suite (`0` lexical/concept overlap).
 3. Run **Stage 1 (`train_lora.py`)** → verify Stage 1 standalone → run **Stage 2 (`online_rl_blender.py` with your verifier, `--algo dppo --ref-anchor sft`)** → verify **Gates A–E (Section 6)**.
-4. Register the new `:0.0` `Q8_0` GGUF in `qwen27b`'s `--lora-scaled` list and toggle it on demand with `/home/nos/.pi/agent/skills/lora-router/scripts/lora_ctl.py`.
+4. Register the new `:0.0` `Q8_0` GGUF in `qwen27b`'s `--lora-scaled` list and toggle it on demand with `../.pi/agent/skills/lora-router/scripts/lora_ctl.py`.

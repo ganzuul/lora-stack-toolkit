@@ -13,7 +13,9 @@ the core training/export code, and the llama.cpp/llama-swap hot-swap router.
   defaults, tuning advice, and validation caveats.
 - [Full scaling note](docs/lora-stack-scaling.md): the complete reference
   discussion of exclusive switching, stacking, and operational caveats.
-- [Router operator guide](router/SKILL.md) and [controller](router/lora_ctl.py):
+- [`.pi` router skill](.pi/agent/skills/lora-router/SKILL.md), including the
+  [controller](.pi/agent/skills/lora-router/scripts/lora_ctl.py) and
+  [Geometry Nodes verifier](.pi/agent/skills/lora-router/scripts/gn_check.py):
   safe model-state checks, selector aliases, read-modify-write updates, and
   verification.
 - Training and export implementation: `scripts/distill-lora/` plus the shared
@@ -53,9 +55,11 @@ docs/
   lora-training-recipe-spec.md
   lora-stack-scaling.md
   scale-selection.md
-router/
+.pi/agent/skills/lora-router/
   SKILL.md
-  lora_ctl.py
+  scripts/
+    lora_ctl.py
+    gn_check.py
 scripts/
   distill-lora/
     train_lora.py
@@ -82,8 +86,8 @@ llama-server.
 ## Quick router commands
 
 ```bash
-python3 router/lora_ctl.py list
-python3 router/lora_ctl.py load geonodes
-python3 router/lora_ctl.py load blenderworld
-python3 router/lora_ctl.py unload
+python3 .pi/agent/skills/lora-router/scripts/lora_ctl.py list
+python3 .pi/agent/skills/lora-router/scripts/lora_ctl.py load geonodes
+python3 .pi/agent/skills/lora-router/scripts/lora_ctl.py load blenderworld
+python3 .pi/agent/skills/lora-router/scripts/lora_ctl.py unload
 ```
