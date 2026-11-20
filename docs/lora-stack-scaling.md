@@ -1,49 +1,64 @@
-In `llama.cpp`, loaded LoRA adapters are applied **additively** to the base model weights $W_0$ during graph evaluation:
+In `llama.cpp`, loaded LoRA adapters contribute additively to the base model
+weights $W_0$ during graph evaluation:
 
 $$W_{\text{eff}} = W_0 + \sum_{i} s_i \cdot \left(\frac{\alpha_i}{r_i}\right) B_i A_i$$
 
-Here, $s_i$ is the runtime `scale` you pass via `--lora-scaled` or `POST /lora-adapters`. Because the base weights $W_0$ are never mutated in memory, changing $s_i$ is mathematically lossless—setting an adapter to `0.0` completely removes its contribution ($s_i = 0 \implies W_{\text{eff}} = W_0$).
+Here, $s_i$ is the runtime `scale` passed through `--lora-scaled` or
+`POST /lora-adapters`. The base weights are not rewritten when scales change;
+setting one adapter to `0.0` removes that adapter's contribution. This does not
+guarantee that a different scale or stack has better output quality.
 
-What treating `scale` like a `0/1` switch actually does to model behavior depends on whether you are **swapping exclusively** or **stacking simultaneously**.
+The numerical update is additive, but behavior depends on the adapter weights,
+their training bases, overlap, scales, model, and inference runtime. Treat scale
+vectors as experimental settings to evaluate—not probabilities or a universal
+measure of update magnitude.
 
 ---
 
 ### 1. Exclusive `0/1` Switching (`[1.0, 0.0, 0.0]` $\rightarrow$ `[0.0, 1.0, 0.0]`)
 
-* **Behavior:** Clean and lossless. Each adapter sees the exact base weight manifold $W_0$ it was trained on.
-* **Side effect:** Every time you change the active scale(s), `llama-server` must **invalidate and recompute the KV cache**, because previously cached $K$ and $V$ projections were computed using the old $W_{\text{eff}}$. If you are hot-swapping mid-conversation, expect a full prompt-reprocessing pause on the next turn.
+* **Weight behavior:** Only the selected adapter contributes, at the selected scale; the base weights remain unchanged.
+* **Quality behavior:** Switching is not a quality guarantee. Each adapter should be validated against its intended base model and evaluated independently.
+* **Runtime behavior:** KV-cache handling after a scale update depends on the llama.cpp fork/version and request path. Verify it in the target runtime instead of assuming cache invalidation or reuse behavior.
 
 ### 2. Additive `1/1` Stacking (`[1.0, 1.0, 0.0]`)
 
-Treating multiple adapters as independent `0/1` switches and turning two or more to `1.0` simultaneously is where behavior degrades:
+Multiple adapters at `1.0` add their full configured deltas. This can work, but
+does not imply that the combination will improve behavior:
 
-* **Norm Inflation & Activation Drift:** Each adapter was trained assuming $W_0$ as its baseline, not $W_0 + \Delta W_1$. Summing $\Delta W_1 + \Delta W_2$ at full `1.0` scale increases the Frobenius norm of the weight update and pushes intermediate layer activations out of distribution.
-* **Subspace Interference:** If your core adapter (`r32`) and a domain SFT adapter both modify the same attention heads or FFN projections in conflicting directions, they cancel or distort each other—typically showing up as formatting collapse, repetition loops, or loss of tool-calling discipline.
+* Updates can reinforce or cancel. The result depends on the actual tensor deltas, not just scale values.
+* Overlapping modules can interact; independent training does not guarantee independent behavior when stacked.
+* A larger sum of scales does not prove a larger Frobenius norm, nor does a smaller sum guarantee a safer or higher-quality stack.
 
 ---
 
 ### 3. How to Scale a Stack Properly
 
-When combining a **general/core adapter** (e.g., `core-pi-qwopus-maximin-r32`) with a **narrow domain SFT adapter** (e.g., `blender-c7-gn-sft`), use damped, sub-unit scaling rather than `1.0 + 1.0`:
+For the currently wired **merged core** plus one domain specialist, the values
+below are candidate starting points for an evaluation sweep, not universal
+recommendations:
 
-| Goal | Starting Scale Vector | Why It Works |
+| Goal | Candidate Scale Vector | Interpretation |
 | --- | --- | --- |
-| **Core reasoning + light domain knowledge** | `[0.8, 0.35, 0.0]` | Keeps the core reasoning/formatting manifold dominant while injecting domain vocabulary and Geometry Nodes patterns without blowing up activation norms. |
-| **Equal blend of two adapters** | `[0.5, 0.5, 0.0]` | Convex combination ($\sum s_i = 1.0$); preserves overall perturbation magnitude. |
-| **Domain-heavy with core guardrails** | `[0.4, 0.75, 0.0]` | Lets the Blender SFT drive syntax/API calls while the core adapter stabilizes long-horizon coherence. |
-| **Three-way stack** | `[0.5, 0.3, 0.3]` | Keep the total sum of scales roughly in the **1.0 to 1.2** range. |
+| **Core + light specialist influence** | `[0.8, 0.35, 0.0]` | Current router default; a conservative initial experiment. |
+| **Equal numeric scales** | `[0.5, 0.5, 0.0]` | A point to test; equal scales do not imply equal influence. |
+| **Specialist-forward experiment** | `[0.4, 0.75, 0.0]` | A more specialist-weighted point to test against general behavior. |
+| **Three-adapter experiment** | `[0.5, 0.3, 0.3]` | Only use after evaluating the exact three-way stack. |
 
-**Tuning heuristic:** Lock your core adapter at `0.7`–`0.8` and sweep the domain adapter from `0.25` upward in `0.15` steps. Stop as soon as the domain-specific knowledge activates cleanly; pushing further usually degrades general instruction following before it improves domain recall.
+**Tuning procedure:** Hold one adapter's scale fixed, sweep the specialist scale,
+and compare held-out domain tasks as well as general instruction/tool-use
+behavior. Choose based on measured results. Do not infer safety or quality from
+the sum of scales.
 
 For the live `qwen27b` router, the controller now uses the conservative starting point `[0.8, 0.35, 0.0]`: merged core at `0.8`, selected specialist at `0.35`, and the other specialist at `0.0`.
 
 ```bash
-/home/nos/.pi/agent/skills/lora-router/scripts/lora_ctl.py load geonodes
+~/.pi/agent/skills/lora-router/scripts/lora_ctl.py load geonodes
 # or
-/home/nos/.pi/agent/skills/lora-router/scripts/lora_ctl.py load blenderworld
+~/.pi/agent/skills/lora-router/scripts/lora_ctl.py load blenderworld
 
 # Restore the core-only baseline: [1.0, 0.0, 0.0]
-/home/nos/.pi/agent/skills/lora-router/scripts/lora_ctl.py unload
+~/.pi/agent/skills/lora-router/scripts/lora_ctl.py unload
 ```
 
 `load <specialist> --scale X --core-scale Y` allows deliberate tuning. The

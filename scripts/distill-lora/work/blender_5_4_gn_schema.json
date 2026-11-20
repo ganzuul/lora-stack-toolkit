@@ -1,0 +1,8484 @@
+{
+  "blender_version": "5.4.0 Alpha",
+  "node_count": 369,
+  "nodes": {
+    "FunctionNodeAlignEulerToVector": {
+      "inputs": [
+        [
+          "Rotation",
+          "VECTOR"
+        ],
+        [
+          "Factor",
+          "VALUE"
+        ],
+        [
+          "Vector",
+          "VECTOR"
+        ]
+      ],
+      "outputs": [
+        [
+          "Rotation",
+          "VECTOR"
+        ]
+      ]
+    },
+    "FunctionNodeAlignRotationToVector": {
+      "inputs": [
+        [
+          "Rotation",
+          "ROTATION"
+        ],
+        [
+          "Factor",
+          "VALUE"
+        ],
+        [
+          "Vector",
+          "VECTOR"
+        ]
+      ],
+      "outputs": [
+        [
+          "Rotation",
+          "ROTATION"
+        ]
+      ]
+    },
+    "FunctionNodeAxesToRotation": {
+      "inputs": [
+        [
+          "Primary Axis",
+          "VECTOR"
+        ],
+        [
+          "Secondary Axis",
+          "VECTOR"
+        ]
+      ],
+      "outputs": [
+        [
+          "Rotation",
+          "ROTATION"
+        ]
+      ]
+    },
+    "FunctionNodeAxisAngleToRotation": {
+      "inputs": [
+        [
+          "Axis",
+          "VECTOR"
+        ],
+        [
+          "Angle",
+          "VALUE"
+        ]
+      ],
+      "outputs": [
+        [
+          "Rotation",
+          "ROTATION"
+        ]
+      ]
+    },
+    "FunctionNodeBitMath": {
+      "inputs": [
+        [
+          "A",
+          "INT"
+        ],
+        [
+          "B",
+          "INT"
+        ],
+        [
+          "Shift",
+          "INT"
+        ]
+      ],
+      "outputs": [
+        [
+          "Value",
+          "INT"
+        ]
+      ]
+    },
+    "FunctionNodeBooleanMath": {
+      "inputs": [
+        [
+          "Boolean",
+          "BOOLEAN"
+        ],
+        [
+          "Boolean",
+          "BOOLEAN"
+        ]
+      ],
+      "outputs": [
+        [
+          "Boolean",
+          "BOOLEAN"
+        ]
+      ]
+    },
+    "FunctionNodeCombineColor": {
+      "inputs": [
+        [
+          "Red",
+          "VALUE"
+        ],
+        [
+          "Green",
+          "VALUE"
+        ],
+        [
+          "Blue",
+          "VALUE"
+        ],
+        [
+          "Alpha",
+          "VALUE"
+        ]
+      ],
+      "outputs": [
+        [
+          "Color",
+          "RGBA"
+        ]
+      ]
+    },
+    "FunctionNodeCombineMatrix": {
+      "inputs": [
+        [
+          "Column 1 Row 1",
+          "VALUE"
+        ],
+        [
+          "Column 1 Row 2",
+          "VALUE"
+        ],
+        [
+          "Column 1 Row 3",
+          "VALUE"
+        ],
+        [
+          "Column 1 Row 4",
+          "VALUE"
+        ],
+        [
+          "Column 2 Row 1",
+          "VALUE"
+        ],
+        [
+          "Column 2 Row 2",
+          "VALUE"
+        ],
+        [
+          "Column 2 Row 3",
+          "VALUE"
+        ],
+        [
+          "Column 2 Row 4",
+          "VALUE"
+        ],
+        [
+          "Column 3 Row 1",
+          "VALUE"
+        ],
+        [
+          "Column 3 Row 2",
+          "VALUE"
+        ],
+        [
+          "Column 3 Row 3",
+          "VALUE"
+        ],
+        [
+          "Column 3 Row 4",
+          "VALUE"
+        ],
+        [
+          "Column 4 Row 1",
+          "VALUE"
+        ],
+        [
+          "Column 4 Row 2",
+          "VALUE"
+        ],
+        [
+          "Column 4 Row 3",
+          "VALUE"
+        ],
+        [
+          "Column 4 Row 4",
+          "VALUE"
+        ]
+      ],
+      "outputs": [
+        [
+          "Matrix",
+          "MATRIX"
+        ]
+      ]
+    },
+    "FunctionNodeCombineTransform": {
+      "inputs": [
+        [
+          "Translation",
+          "VECTOR"
+        ],
+        [
+          "Rotation",
+          "ROTATION"
+        ],
+        [
+          "Scale",
+          "VECTOR"
+        ]
+      ],
+      "outputs": [
+        [
+          "Transform",
+          "MATRIX"
+        ]
+      ]
+    },
+    "FunctionNodeCompare": {
+      "inputs": [
+        [
+          "A",
+          "VALUE"
+        ],
+        [
+          "B",
+          "VALUE"
+        ]
+      ],
+      "outputs": [
+        [
+          "Result",
+          "BOOLEAN"
+        ]
+      ]
+    },
+    "FunctionNodeEulerToRotation": {
+      "inputs": [
+        [
+          "Euler",
+          "VECTOR"
+        ]
+      ],
+      "outputs": [
+        [
+          "Rotation",
+          "ROTATION"
+        ]
+      ]
+    },
+    "FunctionNodeFindInString": {
+      "inputs": [
+        [
+          "String",
+          "STRING"
+        ],
+        [
+          "Search",
+          "STRING"
+        ],
+        [
+          "Mode",
+          "MENU"
+        ]
+      ],
+      "outputs": [
+        [
+          "First Found",
+          "INT"
+        ],
+        [
+          "Count",
+          "INT"
+        ]
+      ]
+    },
+    "FunctionNodeFloatToInt": {
+      "inputs": [
+        [
+          "Float",
+          "VALUE"
+        ]
+      ],
+      "outputs": [
+        [
+          "Integer",
+          "INT"
+        ]
+      ]
+    },
+    "FunctionNodeFormatString": {
+      "inputs": [
+        [
+          "Format",
+          "STRING"
+        ],
+        [
+          "",
+          "CUSTOM"
+        ]
+      ],
+      "outputs": [
+        [
+          "String",
+          "STRING"
+        ]
+      ]
+    },
+    "FunctionNodeGetVectorComponent": {
+      "inputs": [
+        [
+          "Vector",
+          "VECTOR"
+        ],
+        [
+          "Index",
+          "INT"
+        ]
+      ],
+      "outputs": [
+        [
+          "Value",
+          "VALUE"
+        ]
+      ]
+    },
+    "FunctionNodeHashValue": {
+      "inputs": [
+        [
+          "Value",
+          "INT"
+        ],
+        [
+          "Seed",
+          "INT"
+        ]
+      ],
+      "outputs": [
+        [
+          "Hash",
+          "INT"
+        ]
+      ]
+    },
+    "FunctionNodeInputBool": {
+      "inputs": [],
+      "outputs": [
+        [
+          "Boolean",
+          "BOOLEAN"
+        ]
+      ]
+    },
+    "FunctionNodeInputColor": {
+      "inputs": [],
+      "outputs": [
+        [
+          "Color",
+          "RGBA"
+        ]
+      ]
+    },
+    "FunctionNodeInputInt": {
+      "inputs": [],
+      "outputs": [
+        [
+          "Integer",
+          "INT"
+        ]
+      ]
+    },
+    "FunctionNodeInputIntVector": {
+      "inputs": [],
+      "outputs": [
+        [
+          "Vector",
+          "INT_VECTOR"
+        ]
+      ]
+    },
+    "FunctionNodeInputMenu": {
+      "inputs": [],
+      "outputs": [
+        [
+          "Menu",
+          "MENU"
+        ]
+      ]
+    },
+    "FunctionNodeInputRotation": {
+      "inputs": [],
+      "outputs": [
+        [
+          "Rotation",
+          "ROTATION"
+        ]
+      ]
+    },
+    "FunctionNodeInputSpecialCharacters": {
+      "inputs": [],
+      "outputs": [
+        [
+          "Line Break",
+          "STRING"
+        ],
+        [
+          "Tab",
+          "STRING"
+        ]
+      ]
+    },
+    "FunctionNodeInputString": {
+      "inputs": [],
+      "outputs": [
+        [
+          "String",
+          "STRING"
+        ]
+      ]
+    },
+    "FunctionNodeInputVector": {
+      "inputs": [],
+      "outputs": [
+        [
+          "Vector",
+          "VECTOR"
+        ]
+      ]
+    },
+    "FunctionNodeIntegerMath": {
+      "inputs": [
+        [
+          "Value",
+          "INT"
+        ],
+        [
+          "Value",
+          "INT"
+        ],
+        [
+          "Value",
+          "INT"
+        ]
+      ],
+      "outputs": [
+        [
+          "Value",
+          "INT"
+        ]
+      ]
+    },
+    "FunctionNodeInvertMatrix": {
+      "inputs": [
+        [
+          "Matrix",
+          "MATRIX"
+        ]
+      ],
+      "outputs": [
+        [
+          "Matrix",
+          "MATRIX"
+        ],
+        [
+          "Invertible",
+          "BOOLEAN"
+        ]
+      ]
+    },
+    "FunctionNodeInvertRotation": {
+      "inputs": [
+        [
+          "Rotation",
+          "ROTATION"
+        ]
+      ],
+      "outputs": [
+        [
+          "Rotation",
+          "ROTATION"
+        ]
+      ]
+    },
+    "FunctionNodeMatchString": {
+      "inputs": [
+        [
+          "String",
+          "STRING"
+        ],
+        [
+          "Operation",
+          "MENU"
+        ],
+        [
+          "Key",
+          "STRING"
+        ]
+      ],
+      "outputs": [
+        [
+          "Result",
+          "BOOLEAN"
+        ]
+      ]
+    },
+    "FunctionNodeMatrixDeterminant": {
+      "inputs": [
+        [
+          "Matrix",
+          "MATRIX"
+        ]
+      ],
+      "outputs": [
+        [
+          "Determinant",
+          "VALUE"
+        ]
+      ]
+    },
+    "FunctionNodeMatrixMultiply": {
+      "inputs": [
+        [
+          "Matrix",
+          "MATRIX"
+        ],
+        [
+          "Matrix",
+          "MATRIX"
+        ]
+      ],
+      "outputs": [
+        [
+          "Matrix",
+          "MATRIX"
+        ]
+      ]
+    },
+    "FunctionNodeMatrixSVD": {
+      "inputs": [
+        [
+          "Matrix",
+          "MATRIX"
+        ]
+      ],
+      "outputs": [
+        [
+          "U",
+          "MATRIX"
+        ],
+        [
+          "S",
+          "VECTOR"
+        ],
+        [
+          "V",
+          "MATRIX"
+        ]
+      ]
+    },
+    "FunctionNodeProjectPoint": {
+      "inputs": [
+        [
+          "Vector",
+          "VECTOR"
+        ],
+        [
+          "Transform",
+          "MATRIX"
+        ]
+      ],
+      "outputs": [
+        [
+          "Vector",
+          "VECTOR"
+        ]
+      ]
+    },
+    "FunctionNodeQuaternionToRotation": {
+      "inputs": [
+        [
+          "W",
+          "VALUE"
+        ],
+        [
+          "X",
+          "VALUE"
+        ],
+        [
+          "Y",
+          "VALUE"
+        ],
+        [
+          "Z",
+          "VALUE"
+        ]
+      ],
+      "outputs": [
+        [
+          "Rotation",
+          "ROTATION"
+        ]
+      ]
+    },
+    "FunctionNodeRandomValue": {
+      "inputs": [
+        [
+          "Min",
+          "VALUE"
+        ],
+        [
+          "Max",
+          "VALUE"
+        ],
+        [
+          "ID",
+          "INT"
+        ],
+        [
+          "Seed",
+          "INT"
+        ]
+      ],
+      "outputs": [
+        [
+          "Value",
+          "VALUE"
+        ]
+      ]
+    },
+    "FunctionNodeReplaceString": {
+      "inputs": [
+        [
+          "String",
+          "STRING"
+        ],
+        [
+          "Find",
+          "STRING"
+        ],
+        [
+          "Replace",
+          "STRING"
+        ]
+      ],
+      "outputs": [
+        [
+          "String",
+          "STRING"
+        ]
+      ]
+    },
+    "FunctionNodeReverseString": {
+      "inputs": [
+        [
+          "String",
+          "STRING"
+        ]
+      ],
+      "outputs": [
+        [
+          "String",
+          "STRING"
+        ]
+      ]
+    },
+    "FunctionNodeRotateEuler": {
+      "inputs": [
+        [
+          "Rotation",
+          "VECTOR"
+        ],
+        [
+          "Rotate By",
+          "VECTOR"
+        ]
+      ],
+      "outputs": [
+        [
+          "Rotation",
+          "VECTOR"
+        ]
+      ]
+    },
+    "FunctionNodeRotateRotation": {
+      "inputs": [
+        [
+          "Rotation",
+          "ROTATION"
+        ],
+        [
+          "Rotate By",
+          "ROTATION"
+        ]
+      ],
+      "outputs": [
+        [
+          "Rotation",
+          "ROTATION"
+        ]
+      ]
+    },
+    "FunctionNodeRotateVector": {
+      "inputs": [
+        [
+          "Vector",
+          "VECTOR"
+        ],
+        [
+          "Rotation",
+          "ROTATION"
+        ]
+      ],
+      "outputs": [
+        [
+          "Vector",
+          "VECTOR"
+        ]
+      ]
+    },
+    "FunctionNodeRotationToAxisAngle": {
+      "inputs": [
+        [
+          "Rotation",
+          "ROTATION"
+        ]
+      ],
+      "outputs": [
+        [
+          "Axis",
+          "VECTOR"
+        ],
+        [
+          "Angle",
+          "VALUE"
+        ]
+      ]
+    },
+    "FunctionNodeRotationToEuler": {
+      "inputs": [
+        [
+          "Rotation",
+          "ROTATION"
+        ]
+      ],
+      "outputs": [
+        [
+          "Euler",
+          "VECTOR"
+        ]
+      ]
+    },
+    "FunctionNodeRotationToQuaternion": {
+      "inputs": [
+        [
+          "Rotation",
+          "ROTATION"
+        ]
+      ],
+      "outputs": [
+        [
+          "W",
+          "VALUE"
+        ],
+        [
+          "X",
+          "VALUE"
+        ],
+        [
+          "Y",
+          "VALUE"
+        ],
+        [
+          "Z",
+          "VALUE"
+        ]
+      ]
+    },
+    "FunctionNodeSeparateColor": {
+      "inputs": [
+        [
+          "Color",
+          "RGBA"
+        ]
+      ],
+      "outputs": [
+        [
+          "Red",
+          "VALUE"
+        ],
+        [
+          "Green",
+          "VALUE"
+        ],
+        [
+          "Blue",
+          "VALUE"
+        ],
+        [
+          "Alpha",
+          "VALUE"
+        ]
+      ]
+    },
+    "FunctionNodeSeparateMatrix": {
+      "inputs": [
+        [
+          "Matrix",
+          "MATRIX"
+        ]
+      ],
+      "outputs": [
+        [
+          "Column 1 Row 1",
+          "VALUE"
+        ],
+        [
+          "Column 1 Row 2",
+          "VALUE"
+        ],
+        [
+          "Column 1 Row 3",
+          "VALUE"
+        ],
+        [
+          "Column 1 Row 4",
+          "VALUE"
+        ],
+        [
+          "Column 2 Row 1",
+          "VALUE"
+        ],
+        [
+          "Column 2 Row 2",
+          "VALUE"
+        ],
+        [
+          "Column 2 Row 3",
+          "VALUE"
+        ],
+        [
+          "Column 2 Row 4",
+          "VALUE"
+        ],
+        [
+          "Column 3 Row 1",
+          "VALUE"
+        ],
+        [
+          "Column 3 Row 2",
+          "VALUE"
+        ],
+        [
+          "Column 3 Row 3",
+          "VALUE"
+        ],
+        [
+          "Column 3 Row 4",
+          "VALUE"
+        ],
+        [
+          "Column 4 Row 1",
+          "VALUE"
+        ],
+        [
+          "Column 4 Row 2",
+          "VALUE"
+        ],
+        [
+          "Column 4 Row 3",
+          "VALUE"
+        ],
+        [
+          "Column 4 Row 4",
+          "VALUE"
+        ]
+      ]
+    },
+    "FunctionNodeSeparateTransform": {
+      "inputs": [
+        [
+          "Transform",
+          "MATRIX"
+        ]
+      ],
+      "outputs": [
+        [
+          "Translation",
+          "VECTOR"
+        ],
+        [
+          "Rotation",
+          "ROTATION"
+        ],
+        [
+          "Scale",
+          "VECTOR"
+        ]
+      ]
+    },
+    "FunctionNodeSetStringCase": {
+      "inputs": [
+        [
+          "String",
+          "STRING"
+        ],
+        [
+          "Case",
+          "MENU"
+        ]
+      ],
+      "outputs": [
+        [
+          "String",
+          "STRING"
+        ]
+      ]
+    },
+    "FunctionNodeSliceString": {
+      "inputs": [
+        [
+          "String",
+          "STRING"
+        ],
+        [
+          "Position",
+          "INT"
+        ],
+        [
+          "Length",
+          "INT"
+        ]
+      ],
+      "outputs": [
+        [
+          "String",
+          "STRING"
+        ]
+      ]
+    },
+    "FunctionNodeSplitString": {
+      "inputs": [
+        [
+          "String",
+          "STRING"
+        ],
+        [
+          "Separator",
+          "STRING"
+        ]
+      ],
+      "outputs": [
+        [
+          "List",
+          "STRING"
+        ]
+      ]
+    },
+    "FunctionNodeStringLength": {
+      "inputs": [
+        [
+          "String",
+          "STRING"
+        ]
+      ],
+      "outputs": [
+        [
+          "Length",
+          "INT"
+        ]
+      ]
+    },
+    "FunctionNodeStringToValue": {
+      "inputs": [
+        [
+          "String",
+          "STRING"
+        ],
+        [
+          "Base",
+          "INT"
+        ]
+      ],
+      "outputs": [
+        [
+          "Value",
+          "VALUE"
+        ],
+        [
+          "Length",
+          "INT"
+        ]
+      ]
+    },
+    "FunctionNodeTransformDirection": {
+      "inputs": [
+        [
+          "Direction",
+          "VECTOR"
+        ],
+        [
+          "Transform",
+          "MATRIX"
+        ]
+      ],
+      "outputs": [
+        [
+          "Direction",
+          "VECTOR"
+        ]
+      ]
+    },
+    "FunctionNodeTransformPoint": {
+      "inputs": [
+        [
+          "Vector",
+          "VECTOR"
+        ],
+        [
+          "Transform",
+          "MATRIX"
+        ]
+      ],
+      "outputs": [
+        [
+          "Vector",
+          "VECTOR"
+        ]
+      ]
+    },
+    "FunctionNodeTransposeMatrix": {
+      "inputs": [
+        [
+          "Matrix",
+          "MATRIX"
+        ]
+      ],
+      "outputs": [
+        [
+          "Matrix",
+          "MATRIX"
+        ]
+      ]
+    },
+    "FunctionNodeTrimString": {
+      "inputs": [
+        [
+          "String",
+          "STRING"
+        ],
+        [
+          "Characters",
+          "STRING"
+        ],
+        [
+          "Whitespace",
+          "BOOLEAN"
+        ],
+        [
+          "Start",
+          "BOOLEAN"
+        ],
+        [
+          "End",
+          "BOOLEAN"
+        ]
+      ],
+      "outputs": [
+        [
+          "String",
+          "STRING"
+        ]
+      ]
+    },
+    "FunctionNodeValueToString": {
+      "inputs": [
+        [
+          "Value",
+          "VALUE"
+        ],
+        [
+          "Decimals",
+          "INT"
+        ],
+        [
+          "Base",
+          "INT"
+        ],
+        [
+          "Padding",
+          "INT"
+        ]
+      ],
+      "outputs": [
+        [
+          "String",
+          "STRING"
+        ]
+      ]
+    },
+    "GeometryNodeAccumulateField": {
+      "inputs": [
+        [
+          "Value",
+          "VALUE"
+        ],
+        [
+          "Group ID",
+          "INT"
+        ]
+      ],
+      "outputs": [
+        [
+          "Leading",
+          "VALUE"
+        ],
+        [
+          "Trailing",
+          "VALUE"
+        ],
+        [
+          "Total",
+          "VALUE"
+        ]
+      ]
+    },
+    "GeometryNodeAttributeDomainSize": {
+      "inputs": [
+        [
+          "Geometry",
+          "GEOMETRY"
+        ]
+      ],
+      "outputs": [
+        [
+          "Point Count",
+          "INT"
+        ],
+        [
+          "Edge Count",
+          "INT"
+        ],
+        [
+          "Face Count",
+          "INT"
+        ],
+        [
+          "Face Corner Count",
+          "INT"
+        ],
+        [
+          "Spline Count",
+          "INT"
+        ],
+        [
+          "Instance Count",
+          "INT"
+        ],
+        [
+          "Layer Count",
+          "INT"
+        ]
+      ]
+    },
+    "GeometryNodeAttributeStatistic": {
+      "inputs": [
+        [
+          "Geometry",
+          "GEOMETRY"
+        ],
+        [
+          "Selection",
+          "BOOLEAN"
+        ],
+        [
+          "Attribute",
+          "VALUE"
+        ]
+      ],
+      "outputs": [
+        [
+          "Mean",
+          "VALUE"
+        ],
+        [
+          "Median",
+          "VALUE"
+        ],
+        [
+          "Sum",
+          "VALUE"
+        ],
+        [
+          "Min",
+          "VALUE"
+        ],
+        [
+          "Max",
+          "VALUE"
+        ],
+        [
+          "Range",
+          "VALUE"
+        ],
+        [
+          "Standard Deviation",
+          "VALUE"
+        ],
+        [
+          "Variance",
+          "VALUE"
+        ]
+      ]
+    },
+    "GeometryNodeBake": {
+      "inputs": [
+        [
+          "",
+          "CUSTOM"
+        ]
+      ],
+      "outputs": [
+        [
+          "",
+          "CUSTOM"
+        ]
+      ]
+    },
+    "GeometryNodeBlurAttribute": {
+      "inputs": [
+        [
+          "Value",
+          "VALUE"
+        ],
+        [
+          "Iterations",
+          "INT"
+        ],
+        [
+          "Weight",
+          "VALUE"
+        ]
+      ],
+      "outputs": [
+        [
+          "Value",
+          "VALUE"
+        ]
+      ]
+    },
+    "GeometryNodeBoneInfo": {
+      "inputs": [
+        [
+          "Armature",
+          "OBJECT"
+        ],
+        [
+          "Bone Name",
+          "STRING"
+        ]
+      ],
+      "outputs": [
+        [
+          "Pose",
+          "MATRIX"
+        ],
+        [
+          "Local Pose",
+          "MATRIX"
+        ],
+        [
+          "Transform Pose",
+          "MATRIX"
+        ],
+        [
+          "Rest Pose",
+          "MATRIX"
+        ],
+        [
+          "Rest Length",
+          "VALUE"
+        ],
+        [
+          "Exists",
+          "BOOLEAN"
+        ],
+        [
+          "Envelope Distance",
+          "VALUE"
+        ],
+        [
+          "Radius Head",
+          "VALUE"
+        ],
+        [
+          "Radius Tail",
+          "VALUE"
+        ]
+      ]
+    },
+    "GeometryNodeBoundBox": {
+      "inputs": [
+        [
+          "Geometry",
+          "GEOMETRY"
+        ],
+        [
+          "Use Radius",
+          "BOOLEAN"
+        ]
+      ],
+      "outputs": [
+        [
+          "Bounding Box",
+          "GEOMETRY"
+        ],
+        [
+          "Min",
+          "VECTOR"
+        ],
+        [
+          "Max",
+          "VECTOR"
+        ]
+      ]
+    },
+    "GeometryNodeCameraInfo": {
+      "inputs": [
+        [
+          "Camera",
+          "OBJECT"
+        ]
+      ],
+      "outputs": [
+        [
+          "Projection Matrix",
+          "MATRIX"
+        ],
+        [
+          "Focal Length",
+          "VALUE"
+        ],
+        [
+          "Sensor",
+          "VECTOR"
+        ],
+        [
+          "Shift",
+          "VECTOR"
+        ],
+        [
+          "Clip Start",
+          "VALUE"
+        ],
+        [
+          "Clip End",
+          "VALUE"
+        ],
+        [
+          "Focus Distance",
+          "VALUE"
+        ],
+        [
+          "Is Orthographic",
+          "BOOLEAN"
+        ],
+        [
+          "Orthographic Scale",
+          "VALUE"
+        ]
+      ]
+    },
+    "GeometryNodeCaptureAttribute": {
+      "inputs": [
+        [
+          "Geometry",
+          "GEOMETRY"
+        ],
+        [
+          "Selection",
+          "BOOLEAN"
+        ],
+        [
+          "",
+          "CUSTOM"
+        ]
+      ],
+      "outputs": [
+        [
+          "Geometry",
+          "GEOMETRY"
+        ],
+        [
+          "Selection",
+          "BOOLEAN"
+        ],
+        [
+          "",
+          "CUSTOM"
+        ]
+      ]
+    },
+    "GeometryNodeClosureToList": {
+      "inputs": [
+        [
+          "Count",
+          "INT"
+        ],
+        [
+          "Closure",
+          "CLOSURE"
+        ]
+      ],
+      "outputs": [
+        [
+          "",
+          "CUSTOM"
+        ]
+      ]
+    },
+    "GeometryNodeClusterByConnected": {
+      "inputs": [
+        [
+          "Selection",
+          "BOOLEAN"
+        ],
+        [
+          "Position",
+          "VECTOR"
+        ],
+        [
+          "Distance",
+          "VALUE"
+        ]
+      ],
+      "outputs": [
+        [
+          "Cluster ID",
+          "INT"
+        ]
+      ]
+    },
+    "GeometryNodeClusterByDistance": {
+      "inputs": [
+        [
+          "Selection",
+          "BOOLEAN"
+        ],
+        [
+          "Group ID",
+          "INT"
+        ],
+        [
+          "Position",
+          "VECTOR"
+        ],
+        [
+          "Distance",
+          "VALUE"
+        ]
+      ],
+      "outputs": [
+        [
+          "Cluster ID",
+          "INT"
+        ]
+      ]
+    },
+    "GeometryNodeCollectionChildren": {
+      "inputs": [
+        [
+          "Collection",
+          "COLLECTION"
+        ],
+        [
+          "Recursive",
+          "BOOLEAN"
+        ]
+      ],
+      "outputs": [
+        [
+          "Collections",
+          "COLLECTION"
+        ],
+        [
+          "Objects",
+          "OBJECT"
+        ]
+      ]
+    },
+    "GeometryNodeCollectionInfo": {
+      "inputs": [
+        [
+          "Collection",
+          "COLLECTION"
+        ],
+        [
+          "Separate Children",
+          "BOOLEAN"
+        ],
+        [
+          "Reset Children",
+          "BOOLEAN"
+        ]
+      ],
+      "outputs": [
+        [
+          "Instances",
+          "GEOMETRY"
+        ]
+      ]
+    },
+    "GeometryNodeCombineList": {
+      "inputs": [
+        [
+          "0",
+          "VALUE"
+        ],
+        [
+          "",
+          "CUSTOM"
+        ]
+      ],
+      "outputs": [
+        [
+          "List",
+          "VALUE"
+        ]
+      ]
+    },
+    "GeometryNodeConstructCurves": {
+      "inputs": [
+        [
+          "Positions",
+          "VECTOR"
+        ],
+        [
+          "Curve Offsets",
+          "INT"
+        ]
+      ],
+      "outputs": [
+        [
+          "Curves",
+          "GEOMETRY"
+        ]
+      ]
+    },
+    "GeometryNodeConvexHull": {
+      "inputs": [
+        [
+          "Geometry",
+          "GEOMETRY"
+        ]
+      ],
+      "outputs": [
+        [
+          "Convex Hull",
+          "GEOMETRY"
+        ]
+      ]
+    },
+    "GeometryNodeCornersOfEdge": {
+      "inputs": [
+        [
+          "Edge Index",
+          "INT"
+        ],
+        [
+          "Weights",
+          "VALUE"
+        ],
+        [
+          "Sort Index",
+          "INT"
+        ]
+      ],
+      "outputs": [
+        [
+          "Corner Index",
+          "INT"
+        ],
+        [
+          "Total",
+          "INT"
+        ]
+      ]
+    },
+    "GeometryNodeCornersOfFace": {
+      "inputs": [
+        [
+          "Face Index",
+          "INT"
+        ],
+        [
+          "Weights",
+          "VALUE"
+        ],
+        [
+          "Sort Index",
+          "INT"
+        ]
+      ],
+      "outputs": [
+        [
+          "Corner Index",
+          "INT"
+        ],
+        [
+          "Total",
+          "INT"
+        ]
+      ]
+    },
+    "GeometryNodeCornersOfVertex": {
+      "inputs": [
+        [
+          "Vertex Index",
+          "INT"
+        ],
+        [
+          "Weights",
+          "VALUE"
+        ],
+        [
+          "Sort Index",
+          "INT"
+        ]
+      ],
+      "outputs": [
+        [
+          "Corner Index",
+          "INT"
+        ],
+        [
+          "Total",
+          "INT"
+        ]
+      ]
+    },
+    "GeometryNodeCubeGridTopology": {
+      "inputs": [
+        [
+          "Bounds Min",
+          "VECTOR"
+        ],
+        [
+          "Bounds Max",
+          "VECTOR"
+        ],
+        [
+          "Resolution X",
+          "INT"
+        ],
+        [
+          "Resolution Y",
+          "INT"
+        ],
+        [
+          "Resolution Z",
+          "INT"
+        ],
+        [
+          "Min X",
+          "INT"
+        ],
+        [
+          "Min Y",
+          "INT"
+        ],
+        [
+          "Min Z",
+          "INT"
+        ]
+      ],
+      "outputs": [
+        [
+          "Topology",
+          "BOOLEAN"
+        ]
+      ]
+    },
+    "GeometryNodeCurveArc": {
+      "inputs": [
+        [
+          "Resolution",
+          "INT"
+        ],
+        [
+          "Start",
+          "VECTOR"
+        ],
+        [
+          "Middle",
+          "VECTOR"
+        ],
+        [
+          "End",
+          "VECTOR"
+        ],
+        [
+          "Radius",
+          "VALUE"
+        ],
+        [
+          "Start Angle",
+          "VALUE"
+        ],
+        [
+          "Sweep Angle",
+          "VALUE"
+        ],
+        [
+          "Offset Angle",
+          "VALUE"
+        ],
+        [
+          "Connect Center",
+          "BOOLEAN"
+        ],
+        [
+          "Invert Arc",
+          "BOOLEAN"
+        ]
+      ],
+      "outputs": [
+        [
+          "Curve",
+          "GEOMETRY"
+        ],
+        [
+          "Center",
+          "VECTOR"
+        ],
+        [
+          "Normal",
+          "VECTOR"
+        ],
+        [
+          "Radius",
+          "VALUE"
+        ]
+      ]
+    },
+    "GeometryNodeCurveEndpointSelection": {
+      "inputs": [
+        [
+          "Start Size",
+          "INT"
+        ],
+        [
+          "End Size",
+          "INT"
+        ]
+      ],
+      "outputs": [
+        [
+          "Selection",
+          "BOOLEAN"
+        ]
+      ]
+    },
+    "GeometryNodeCurveHandleTypeSelection": {
+      "inputs": [],
+      "outputs": [
+        [
+          "Selection",
+          "BOOLEAN"
+        ]
+      ]
+    },
+    "GeometryNodeCurveLength": {
+      "inputs": [
+        [
+          "Curve",
+          "GEOMETRY"
+        ]
+      ],
+      "outputs": [
+        [
+          "Length",
+          "VALUE"
+        ]
+      ]
+    },
+    "GeometryNodeCurveOfPoint": {
+      "inputs": [
+        [
+          "Point Index",
+          "INT"
+        ]
+      ],
+      "outputs": [
+        [
+          "Curve Index",
+          "INT"
+        ],
+        [
+          "Index in Curve",
+          "INT"
+        ]
+      ]
+    },
+    "GeometryNodeCurvePrimitiveBezierSegment": {
+      "inputs": [
+        [
+          "Resolution",
+          "INT"
+        ],
+        [
+          "Start",
+          "VECTOR"
+        ],
+        [
+          "Start Handle",
+          "VECTOR"
+        ],
+        [
+          "End Handle",
+          "VECTOR"
+        ],
+        [
+          "End",
+          "VECTOR"
+        ]
+      ],
+      "outputs": [
+        [
+          "Curve",
+          "GEOMETRY"
+        ]
+      ]
+    },
+    "GeometryNodeCurvePrimitiveCircle": {
+      "inputs": [
+        [
+          "Resolution",
+          "INT"
+        ],
+        [
+          "Point 1",
+          "VECTOR"
+        ],
+        [
+          "Point 2",
+          "VECTOR"
+        ],
+        [
+          "Point 3",
+          "VECTOR"
+        ],
+        [
+          "Radius",
+          "VALUE"
+        ]
+      ],
+      "outputs": [
+        [
+          "Curve",
+          "GEOMETRY"
+        ],
+        [
+          "Center",
+          "VECTOR"
+        ]
+      ]
+    },
+    "GeometryNodeCurvePrimitiveLine": {
+      "inputs": [
+        [
+          "Start",
+          "VECTOR"
+        ],
+        [
+          "End",
+          "VECTOR"
+        ],
+        [
+          "Direction",
+          "VECTOR"
+        ],
+        [
+          "Length",
+          "VALUE"
+        ]
+      ],
+      "outputs": [
+        [
+          "Curve",
+          "GEOMETRY"
+        ]
+      ]
+    },
+    "GeometryNodeCurvePrimitiveQuadrilateral": {
+      "inputs": [
+        [
+          "Width",
+          "VALUE"
+        ],
+        [
+          "Height",
+          "VALUE"
+        ],
+        [
+          "Bottom Width",
+          "VALUE"
+        ],
+        [
+          "Top Width",
+          "VALUE"
+        ],
+        [
+          "Offset",
+          "VALUE"
+        ],
+        [
+          "Bottom Height",
+          "VALUE"
+        ],
+        [
+          "Top Height",
+          "VALUE"
+        ],
+        [
+          "Point 1",
+          "VECTOR"
+        ],
+        [
+          "Point 2",
+          "VECTOR"
+        ],
+        [
+          "Point 3",
+          "VECTOR"
+        ],
+        [
+          "Point 4",
+          "VECTOR"
+        ]
+      ],
+      "outputs": [
+        [
+          "Curve",
+          "GEOMETRY"
+        ]
+      ]
+    },
+    "GeometryNodeCurveQuadraticBezier": {
+      "inputs": [
+        [
+          "Resolution",
+          "INT"
+        ],
+        [
+          "Start",
+          "VECTOR"
+        ],
+        [
+          "Middle",
+          "VECTOR"
+        ],
+        [
+          "End",
+          "VECTOR"
+        ]
+      ],
+      "outputs": [
+        [
+          "Curve",
+          "GEOMETRY"
+        ]
+      ]
+    },
+    "GeometryNodeCurveSetHandles": {
+      "inputs": [
+        [
+          "Curve",
+          "GEOMETRY"
+        ],
+        [
+          "Selection",
+          "BOOLEAN"
+        ]
+      ],
+      "outputs": [
+        [
+          "Curve",
+          "GEOMETRY"
+        ]
+      ]
+    },
+    "GeometryNodeCurveSpiral": {
+      "inputs": [
+        [
+          "Resolution",
+          "INT"
+        ],
+        [
+          "Rotations",
+          "VALUE"
+        ],
+        [
+          "Start Radius",
+          "VALUE"
+        ],
+        [
+          "End Radius",
+          "VALUE"
+        ],
+        [
+          "Height",
+          "VALUE"
+        ],
+        [
+          "Reverse",
+          "BOOLEAN"
+        ]
+      ],
+      "outputs": [
+        [
+          "Curve",
+          "GEOMETRY"
+        ]
+      ]
+    },
+    "GeometryNodeCurveSplineType": {
+      "inputs": [
+        [
+          "Curve",
+          "GEOMETRY"
+        ],
+        [
+          "Selection",
+          "BOOLEAN"
+        ]
+      ],
+      "outputs": [
+        [
+          "Curve",
+          "GEOMETRY"
+        ]
+      ]
+    },
+    "GeometryNodeCurveStar": {
+      "inputs": [
+        [
+          "Points",
+          "INT"
+        ],
+        [
+          "Inner Radius",
+          "VALUE"
+        ],
+        [
+          "Outer Radius",
+          "VALUE"
+        ],
+        [
+          "Twist",
+          "VALUE"
+        ]
+      ],
+      "outputs": [
+        [
+          "Curve",
+          "GEOMETRY"
+        ],
+        [
+          "Outer Points",
+          "BOOLEAN"
+        ]
+      ]
+    },
+    "GeometryNodeCurveToMesh": {
+      "inputs": [
+        [
+          "Curve",
+          "GEOMETRY"
+        ],
+        [
+          "Profile Curve",
+          "GEOMETRY"
+        ],
+        [
+          "Scale",
+          "VALUE"
+        ],
+        [
+          "Fill Caps",
+          "BOOLEAN"
+        ],
+        [
+          "Miter Scale",
+          "BOOLEAN"
+        ],
+        [
+          "Miter Scale Limit",
+          "VALUE"
+        ]
+      ],
+      "outputs": [
+        [
+          "Mesh",
+          "GEOMETRY"
+        ]
+      ]
+    },
+    "GeometryNodeCurveToPoints": {
+      "inputs": [
+        [
+          "Curve",
+          "GEOMETRY"
+        ],
+        [
+          "Count",
+          "INT"
+        ],
+        [
+          "Length",
+          "VALUE"
+        ]
+      ],
+      "outputs": [
+        [
+          "Points",
+          "GEOMETRY"
+        ],
+        [
+          "Tangent",
+          "VECTOR"
+        ],
+        [
+          "Normal",
+          "VECTOR"
+        ],
+        [
+          "Rotation",
+          "ROTATION"
+        ]
+      ]
+    },
+    "GeometryNodeCurvesToGreasePencil": {
+      "inputs": [
+        [
+          "Curves",
+          "GEOMETRY"
+        ],
+        [
+          "Selection",
+          "BOOLEAN"
+        ],
+        [
+          "Instances as Layers",
+          "BOOLEAN"
+        ]
+      ],
+      "outputs": [
+        [
+          "Grease Pencil",
+          "GEOMETRY"
+        ]
+      ]
+    },
+    "GeometryNodeDeformCurvesOnSurface": {
+      "inputs": [
+        [
+          "Curves",
+          "GEOMETRY"
+        ]
+      ],
+      "outputs": [
+        [
+          "Curves",
+          "GEOMETRY"
+        ]
+      ]
+    },
+    "GeometryNodeDelaunayTriangulation": {
+      "inputs": [
+        [
+          "Geometry",
+          "GEOMETRY"
+        ],
+        [
+          "Group ID",
+          "INT"
+        ],
+        [
+          "Mode",
+          "MENU"
+        ],
+        [
+          "Type",
+          "MENU"
+        ],
+        [
+          "Fill Rule",
+          "MENU"
+        ]
+      ],
+      "outputs": [
+        [
+          "Mesh",
+          "GEOMETRY"
+        ],
+        [
+          "Intersection Points",
+          "BOOLEAN"
+        ]
+      ]
+    },
+    "GeometryNodeDeleteGeometry": {
+      "inputs": [
+        [
+          "Geometry",
+          "GEOMETRY"
+        ],
+        [
+          "Selection",
+          "BOOLEAN"
+        ]
+      ],
+      "outputs": [
+        [
+          "Geometry",
+          "GEOMETRY"
+        ]
+      ]
+    },
+    "GeometryNodeDistributePointsInGrid": {
+      "inputs": [
+        [
+          "Grid",
+          "VALUE"
+        ],
+        [
+          "Density",
+          "VALUE"
+        ],
+        [
+          "Seed",
+          "INT"
+        ],
+        [
+          "Spacing",
+          "VECTOR"
+        ],
+        [
+          "Threshold",
+          "VALUE"
+        ]
+      ],
+      "outputs": [
+        [
+          "Points",
+          "GEOMETRY"
+        ]
+      ]
+    },
+    "GeometryNodeDistributePointsInVolume": {
+      "inputs": [
+        [
+          "Volume",
+          "GEOMETRY"
+        ],
+        [
+          "Mode",
+          "MENU"
+        ],
+        [
+          "Density",
+          "VALUE"
+        ],
+        [
+          "Seed",
+          "INT"
+        ],
+        [
+          "Spacing",
+          "VECTOR"
+        ],
+        [
+          "Threshold",
+          "VALUE"
+        ]
+      ],
+      "outputs": [
+        [
+          "Points",
+          "GEOMETRY"
+        ]
+      ]
+    },
+    "GeometryNodeDistributePointsOnFaces": {
+      "inputs": [
+        [
+          "Mesh",
+          "GEOMETRY"
+        ],
+        [
+          "Selection",
+          "BOOLEAN"
+        ],
+        [
+          "Distance Min",
+          "VALUE"
+        ],
+        [
+          "Density Max",
+          "VALUE"
+        ],
+        [
+          "Density",
+          "VALUE"
+        ],
+        [
+          "Density Factor",
+          "VALUE"
+        ],
+        [
+          "Seed",
+          "INT"
+        ]
+      ],
+      "outputs": [
+        [
+          "Points",
+          "GEOMETRY"
+        ],
+        [
+          "Normal",
+          "VECTOR"
+        ],
+        [
+          "Rotation",
+          "ROTATION"
+        ]
+      ]
+    },
+    "GeometryNodeDualMesh": {
+      "inputs": [
+        [
+          "Mesh",
+          "GEOMETRY"
+        ],
+        [
+          "Keep Boundaries",
+          "BOOLEAN"
+        ]
+      ],
+      "outputs": [
+        [
+          "Dual Mesh",
+          "GEOMETRY"
+        ]
+      ]
+    },
+    "GeometryNodeDuplicateElements": {
+      "inputs": [
+        [
+          "Geometry",
+          "GEOMETRY"
+        ],
+        [
+          "Selection",
+          "BOOLEAN"
+        ],
+        [
+          "Amount",
+          "INT"
+        ]
+      ],
+      "outputs": [
+        [
+          "Geometry",
+          "GEOMETRY"
+        ],
+        [
+          "Duplicate Index",
+          "INT"
+        ]
+      ]
+    },
+    "GeometryNodeEdgePathsToCurves": {
+      "inputs": [
+        [
+          "Mesh",
+          "GEOMETRY"
+        ],
+        [
+          "Start Vertices",
+          "BOOLEAN"
+        ],
+        [
+          "Next Vertex Index",
+          "INT"
+        ]
+      ],
+      "outputs": [
+        [
+          "Curves",
+          "GEOMETRY"
+        ]
+      ]
+    },
+    "GeometryNodeEdgePathsToSelection": {
+      "inputs": [
+        [
+          "Start Vertices",
+          "BOOLEAN"
+        ],
+        [
+          "Next Vertex Index",
+          "INT"
+        ]
+      ],
+      "outputs": [
+        [
+          "Selection",
+          "BOOLEAN"
+        ]
+      ]
+    },
+    "GeometryNodeEdgesOfCorner": {
+      "inputs": [
+        [
+          "Corner Index",
+          "INT"
+        ]
+      ],
+      "outputs": [
+        [
+          "Next Edge Index",
+          "INT"
+        ],
+        [
+          "Previous Edge Index",
+          "INT"
+        ]
+      ]
+    },
+    "GeometryNodeEdgesOfVertex": {
+      "inputs": [
+        [
+          "Vertex Index",
+          "INT"
+        ],
+        [
+          "Weights",
+          "VALUE"
+        ],
+        [
+          "Sort Index",
+          "INT"
+        ]
+      ],
+      "outputs": [
+        [
+          "Edge Index",
+          "INT"
+        ],
+        [
+          "Total",
+          "INT"
+        ]
+      ]
+    },
+    "GeometryNodeEdgesToFaceGroups": {
+      "inputs": [
+        [
+          "Boundary Edges",
+          "BOOLEAN"
+        ]
+      ],
+      "outputs": [
+        [
+          "Face Group ID",
+          "INT"
+        ]
+      ]
+    },
+    "GeometryNodeExtrudeMesh": {
+      "inputs": [
+        [
+          "Mesh",
+          "GEOMETRY"
+        ],
+        [
+          "Selection",
+          "BOOLEAN"
+        ],
+        [
+          "Offset",
+          "VECTOR"
+        ],
+        [
+          "Offset Scale",
+          "VALUE"
+        ],
+        [
+          "Individual",
+          "BOOLEAN"
+        ]
+      ],
+      "outputs": [
+        [
+          "Mesh",
+          "GEOMETRY"
+        ],
+        [
+          "Top",
+          "BOOLEAN"
+        ],
+        [
+          "Side",
+          "BOOLEAN"
+        ]
+      ]
+    },
+    "GeometryNodeFaceOfCorner": {
+      "inputs": [
+        [
+          "Corner Index",
+          "INT"
+        ]
+      ],
+      "outputs": [
+        [
+          "Face Index",
+          "INT"
+        ],
+        [
+          "Index in Face",
+          "INT"
+        ]
+      ]
+    },
+    "GeometryNodeFieldAtIndex": {
+      "inputs": [
+        [
+          "Value",
+          "VALUE"
+        ],
+        [
+          "Index",
+          "INT"
+        ]
+      ],
+      "outputs": [
+        [
+          "Value",
+          "VALUE"
+        ]
+      ]
+    },
+    "GeometryNodeFieldAverage": {
+      "inputs": [
+        [
+          "Value",
+          "VALUE"
+        ],
+        [
+          "Group ID",
+          "INT"
+        ]
+      ],
+      "outputs": [
+        [
+          "Mean",
+          "VALUE"
+        ],
+        [
+          "Median",
+          "VALUE"
+        ]
+      ]
+    },
+    "GeometryNodeFieldMinAndMax": {
+      "inputs": [
+        [
+          "Value",
+          "VALUE"
+        ],
+        [
+          "Group ID",
+          "INT"
+        ]
+      ],
+      "outputs": [
+        [
+          "Min",
+          "VALUE"
+        ],
+        [
+          "Max",
+          "VALUE"
+        ]
+      ]
+    },
+    "GeometryNodeFieldOnDomain": {
+      "inputs": [
+        [
+          "Value",
+          "VALUE"
+        ]
+      ],
+      "outputs": [
+        [
+          "Value",
+          "VALUE"
+        ]
+      ]
+    },
+    "GeometryNodeFieldToGrid": {
+      "inputs": [
+        [
+          "Topology",
+          "VALUE"
+        ],
+        [
+          "",
+          "CUSTOM"
+        ]
+      ],
+      "outputs": [
+        [
+          "",
+          "CUSTOM"
+        ]
+      ]
+    },
+    "GeometryNodeFieldToList": {
+      "inputs": [
+        [
+          "Count",
+          "INT"
+        ],
+        [
+          "",
+          "CUSTOM"
+        ]
+      ],
+      "outputs": [
+        [
+          "",
+          "CUSTOM"
+        ]
+      ]
+    },
+    "GeometryNodeFieldVariance": {
+      "inputs": [
+        [
+          "Value",
+          "VALUE"
+        ],
+        [
+          "Group ID",
+          "INT"
+        ]
+      ],
+      "outputs": [
+        [
+          "Standard Deviation",
+          "VALUE"
+        ],
+        [
+          "Variance",
+          "VALUE"
+        ]
+      ]
+    },
+    "GeometryNodeFillCurve": {
+      "inputs": [
+        [
+          "Curve",
+          "GEOMETRY"
+        ],
+        [
+          "Group ID",
+          "INT"
+        ],
+        [
+          "Mode",
+          "MENU"
+        ],
+        [
+          "Fill Rule",
+          "MENU"
+        ]
+      ],
+      "outputs": [
+        [
+          "Mesh",
+          "GEOMETRY"
+        ]
+      ]
+    },
+    "GeometryNodeFilletCurve": {
+      "inputs": [
+        [
+          "Curve",
+          "GEOMETRY"
+        ],
+        [
+          "Radius",
+          "VALUE"
+        ],
+        [
+          "Limit Radius",
+          "BOOLEAN"
+        ],
+        [
+          "Mode",
+          "MENU"
+        ],
+        [
+          "Count",
+          "INT"
+        ]
+      ],
+      "outputs": [
+        [
+          "Curve",
+          "GEOMETRY"
+        ]
+      ]
+    },
+    "GeometryNodeFilterList": {
+      "inputs": [
+        [
+          "List",
+          "VALUE"
+        ],
+        [
+          "Selection",
+          "BOOLEAN"
+        ]
+      ],
+      "outputs": [
+        [
+          "Selection",
+          "VALUE"
+        ],
+        [
+          "Inverted",
+          "VALUE"
+        ]
+      ]
+    },
+    "GeometryNodeFlipFaces": {
+      "inputs": [
+        [
+          "Mesh",
+          "GEOMETRY"
+        ],
+        [
+          "Selection",
+          "BOOLEAN"
+        ]
+      ],
+      "outputs": [
+        [
+          "Mesh",
+          "GEOMETRY"
+        ]
+      ]
+    },
+    "GeometryNodeForeachGeometryElementInput": {
+      "inputs": [
+        [
+          "Geometry",
+          "GEOMETRY"
+        ],
+        [
+          "Selection",
+          "BOOLEAN"
+        ],
+        [
+          "",
+          "CUSTOM"
+        ]
+      ],
+      "outputs": [
+        [
+          "Index",
+          "INT"
+        ],
+        [
+          "Element",
+          "GEOMETRY"
+        ],
+        [
+          "",
+          "CUSTOM"
+        ]
+      ]
+    },
+    "GeometryNodeForeachGeometryElementOutput": {
+      "inputs": [
+        [
+          "",
+          "CUSTOM"
+        ],
+        [
+          "Geometry",
+          "GEOMETRY"
+        ],
+        [
+          "",
+          "CUSTOM"
+        ]
+      ],
+      "outputs": [
+        [
+          "Geometry",
+          "GEOMETRY"
+        ],
+        [
+          "",
+          "CUSTOM"
+        ],
+        [
+          "Geometry",
+          "GEOMETRY"
+        ],
+        [
+          "",
+          "CUSTOM"
+        ]
+      ]
+    },
+    "GeometryNodeGeometryMaterials": {
+      "inputs": [
+        [
+          "Geometry",
+          "GEOMETRY"
+        ],
+        [
+          "Component Type",
+          "MENU"
+        ]
+      ],
+      "outputs": [
+        [
+          "Materials",
+          "MATERIAL"
+        ]
+      ]
+    },
+    "GeometryNodeGeometryToInstance": {
+      "inputs": [
+        [
+          "Geometry",
+          "GEOMETRY"
+        ]
+      ],
+      "outputs": [
+        [
+          "Instances",
+          "GEOMETRY"
+        ]
+      ]
+    },
+    "GeometryNodeGetAttributeNames": {
+      "inputs": [
+        [
+          "Geometry",
+          "GEOMETRY"
+        ],
+        [
+          "Filter Data Type",
+          "BOOLEAN"
+        ],
+        [
+          "Data Type",
+          "MENU"
+        ],
+        [
+          "Filter Domain",
+          "BOOLEAN"
+        ],
+        [
+          "Domain",
+          "MENU"
+        ]
+      ],
+      "outputs": [
+        [
+          "Names",
+          "STRING"
+        ]
+      ]
+    },
+    "GeometryNodeGetGeometryBundle": {
+      "inputs": [
+        [
+          "Geometry",
+          "GEOMETRY"
+        ],
+        [
+          "Remove",
+          "BOOLEAN"
+        ]
+      ],
+      "outputs": [
+        [
+          "Geometry",
+          "GEOMETRY"
+        ],
+        [
+          "Bundle",
+          "BUNDLE"
+        ]
+      ]
+    },
+    "GeometryNodeGetGeometryComponent": {
+      "inputs": [
+        [
+          "Geometry",
+          "GEOMETRY"
+        ],
+        [
+          "Type",
+          "MENU"
+        ],
+        [
+          "Remove",
+          "BOOLEAN"
+        ]
+      ],
+      "outputs": [
+        [
+          "Geometry",
+          "GEOMETRY"
+        ],
+        [
+          "Component",
+          "GEOMETRY"
+        ],
+        [
+          "Exists",
+          "BOOLEAN"
+        ]
+      ]
+    },
+    "GeometryNodeGetGridNames": {
+      "inputs": [
+        [
+          "Volume",
+          "GEOMETRY"
+        ]
+      ],
+      "outputs": [
+        [
+          "Names",
+          "STRING"
+        ]
+      ]
+    },
+    "GeometryNodeGetNamedGrid": {
+      "inputs": [
+        [
+          "Volume",
+          "GEOMETRY"
+        ],
+        [
+          "Name",
+          "STRING"
+        ],
+        [
+          "Remove",
+          "BOOLEAN"
+        ]
+      ],
+      "outputs": [
+        [
+          "Volume",
+          "GEOMETRY"
+        ],
+        [
+          "Grid",
+          "VALUE"
+        ]
+      ]
+    },
+    "GeometryNodeGizmoDial": {
+      "inputs": [
+        [
+          "Value",
+          "VALUE"
+        ],
+        [
+          "Position",
+          "VECTOR"
+        ],
+        [
+          "Up",
+          "VECTOR"
+        ],
+        [
+          "Screen Space",
+          "BOOLEAN"
+        ],
+        [
+          "Radius",
+          "VALUE"
+        ]
+      ],
+      "outputs": [
+        [
+          "Transform",
+          "GEOMETRY"
+        ]
+      ]
+    },
+    "GeometryNodeGizmoLinear": {
+      "inputs": [
+        [
+          "Value",
+          "VALUE"
+        ],
+        [
+          "Position",
+          "VECTOR"
+        ],
+        [
+          "Direction",
+          "VECTOR"
+        ]
+      ],
+      "outputs": [
+        [
+          "Transform",
+          "GEOMETRY"
+        ]
+      ]
+    },
+    "GeometryNodeGizmoTransform": {
+      "inputs": [
+        [
+          "Value",
+          "MATRIX"
+        ],
+        [
+          "Position",
+          "VECTOR"
+        ],
+        [
+          "Rotation",
+          "ROTATION"
+        ]
+      ],
+      "outputs": [
+        [
+          "Transform",
+          "GEOMETRY"
+        ]
+      ]
+    },
+    "GeometryNodeGreasePencilColor": {
+      "inputs": [],
+      "outputs": [
+        [
+          "Point",
+          "RGBA"
+        ],
+        [
+          "Fill",
+          "RGBA"
+        ]
+      ]
+    },
+    "GeometryNodeGreasePencilDrawTime": {
+      "inputs": [],
+      "outputs": [
+        [
+          "Creation Time",
+          "VALUE"
+        ],
+        [
+          "Delta Time",
+          "VALUE"
+        ]
+      ]
+    },
+    "GeometryNodeGreasePencilFillID": {
+      "inputs": [],
+      "outputs": [
+        [
+          "Fill ID",
+          "INT"
+        ]
+      ]
+    },
+    "GeometryNodeGreasePencilOpacity": {
+      "inputs": [],
+      "outputs": [
+        [
+          "Point",
+          "VALUE"
+        ],
+        [
+          "Fill",
+          "VALUE"
+        ]
+      ]
+    },
+    "GeometryNodeGreasePencilStrokeSoftness": {
+      "inputs": [],
+      "outputs": [
+        [
+          "Softness",
+          "VALUE"
+        ]
+      ]
+    },
+    "GeometryNodeGreasePencilStrokeVisibility": {
+      "inputs": [],
+      "outputs": [
+        [
+          "Is Hidden",
+          "BOOLEAN"
+        ]
+      ]
+    },
+    "GeometryNodeGreasePencilToCurves": {
+      "inputs": [
+        [
+          "Grease Pencil",
+          "GEOMETRY"
+        ],
+        [
+          "Selection",
+          "BOOLEAN"
+        ],
+        [
+          "Layers as Instances",
+          "BOOLEAN"
+        ]
+      ],
+      "outputs": [
+        [
+          "Curves",
+          "GEOMETRY"
+        ]
+      ]
+    },
+    "GeometryNodeGridAdvect": {
+      "inputs": [
+        [
+          "Grid",
+          "VALUE"
+        ],
+        [
+          "Velocity",
+          "VECTOR"
+        ],
+        [
+          "Time Step",
+          "VALUE"
+        ],
+        [
+          "Integration Scheme",
+          "MENU"
+        ],
+        [
+          "Limiter",
+          "MENU"
+        ]
+      ],
+      "outputs": [
+        [
+          "Grid",
+          "VALUE"
+        ]
+      ]
+    },
+    "GeometryNodeGridClip": {
+      "inputs": [
+        [
+          "Grid",
+          "VALUE"
+        ],
+        [
+          "Min X",
+          "INT"
+        ],
+        [
+          "Min Y",
+          "INT"
+        ],
+        [
+          "Min Z",
+          "INT"
+        ],
+        [
+          "Max X",
+          "INT"
+        ],
+        [
+          "Max Y",
+          "INT"
+        ],
+        [
+          "Max Z",
+          "INT"
+        ]
+      ],
+      "outputs": [
+        [
+          "Grid",
+          "VALUE"
+        ]
+      ]
+    },
+    "GeometryNodeGridCurl": {
+      "inputs": [
+        [
+          "Grid",
+          "VECTOR"
+        ]
+      ],
+      "outputs": [
+        [
+          "Curl",
+          "VECTOR"
+        ]
+      ]
+    },
+    "GeometryNodeGridDeactivateVoxels": {
+      "inputs": [
+        [
+          "Grid",
+          "VALUE"
+        ],
+        [
+          "Selection",
+          "BOOLEAN"
+        ],
+        [
+          "Set Background Value",
+          "BOOLEAN"
+        ]
+      ],
+      "outputs": [
+        [
+          "Grid",
+          "VALUE"
+        ]
+      ]
+    },
+    "GeometryNodeGridDilateAndErode": {
+      "inputs": [
+        [
+          "Grid",
+          "VALUE"
+        ],
+        [
+          "Connectivity",
+          "MENU"
+        ],
+        [
+          "Tiles",
+          "MENU"
+        ],
+        [
+          "Steps",
+          "INT"
+        ]
+      ],
+      "outputs": [
+        [
+          "Grid",
+          "VALUE"
+        ]
+      ]
+    },
+    "GeometryNodeGridDivergence": {
+      "inputs": [
+        [
+          "Grid",
+          "VECTOR"
+        ]
+      ],
+      "outputs": [
+        [
+          "Divergence",
+          "VALUE"
+        ]
+      ]
+    },
+    "GeometryNodeGridGradient": {
+      "inputs": [
+        [
+          "Grid",
+          "VALUE"
+        ]
+      ],
+      "outputs": [
+        [
+          "Gradient",
+          "VECTOR"
+        ]
+      ]
+    },
+    "GeometryNodeGridInfo": {
+      "inputs": [
+        [
+          "Grid",
+          "VALUE"
+        ]
+      ],
+      "outputs": [
+        [
+          "Transform",
+          "MATRIX"
+        ],
+        [
+          "Background Value",
+          "VALUE"
+        ]
+      ]
+    },
+    "GeometryNodeGridLaplacian": {
+      "inputs": [
+        [
+          "Grid",
+          "VALUE"
+        ]
+      ],
+      "outputs": [
+        [
+          "Laplacian",
+          "VALUE"
+        ]
+      ]
+    },
+    "GeometryNodeGridMean": {
+      "inputs": [
+        [
+          "Grid",
+          "VALUE"
+        ],
+        [
+          "Width",
+          "INT"
+        ],
+        [
+          "Iterations",
+          "INT"
+        ]
+      ],
+      "outputs": [
+        [
+          "Grid",
+          "VALUE"
+        ]
+      ]
+    },
+    "GeometryNodeGridMedian": {
+      "inputs": [
+        [
+          "Grid",
+          "VALUE"
+        ],
+        [
+          "Width",
+          "INT"
+        ],
+        [
+          "Iterations",
+          "INT"
+        ]
+      ],
+      "outputs": [
+        [
+          "Grid",
+          "VALUE"
+        ]
+      ]
+    },
+    "GeometryNodeGridPrune": {
+      "inputs": [
+        [
+          "Grid",
+          "VALUE"
+        ],
+        [
+          "Mode",
+          "MENU"
+        ],
+        [
+          "Threshold",
+          "VALUE"
+        ]
+      ],
+      "outputs": [
+        [
+          "Grid",
+          "VALUE"
+        ]
+      ]
+    },
+    "GeometryNodeGridSolvePoisson": {
+      "inputs": [
+        [
+          "Grid",
+          "VALUE"
+        ],
+        [
+          "Max Iterations",
+          "INT"
+        ],
+        [
+          "Error Threshold",
+          "VALUE"
+        ],
+        [
+          "Threshold Mode",
+          "MENU"
+        ],
+        [
+          "Boundary",
+          "MENU"
+        ],
+        [
+          "Boundary Value",
+          "VALUE"
+        ],
+        [
+          "Boundary Gradient",
+          "VECTOR"
+        ],
+        [
+          "Boundary Factor",
+          "VALUE"
+        ]
+      ],
+      "outputs": [
+        [
+          "Solution",
+          "VALUE"
+        ],
+        [
+          "Success",
+          "BOOLEAN"
+        ],
+        [
+          "Iterations",
+          "INT"
+        ],
+        [
+          "Absolute Error",
+          "VALUE"
+        ],
+        [
+          "Relative Error",
+          "VALUE"
+        ],
+        [
+          "Debug Boundary Value",
+          "VALUE"
+        ],
+        [
+          "Debug Boundary Gradient",
+          "VECTOR"
+        ],
+        [
+          "Debug Boundary Factor",
+          "VALUE"
+        ]
+      ]
+    },
+    "GeometryNodeGridToMesh": {
+      "inputs": [
+        [
+          "Grid",
+          "VALUE"
+        ],
+        [
+          "Threshold",
+          "VALUE"
+        ],
+        [
+          "Adaptivity",
+          "VALUE"
+        ]
+      ],
+      "outputs": [
+        [
+          "Mesh",
+          "GEOMETRY"
+        ]
+      ]
+    },
+    "GeometryNodeGridToPoints": {
+      "inputs": [
+        [
+          "Grid",
+          "VALUE"
+        ]
+      ],
+      "outputs": [
+        [
+          "Points",
+          "GEOMETRY"
+        ],
+        [
+          "Value",
+          "VALUE"
+        ],
+        [
+          "X",
+          "INT"
+        ],
+        [
+          "Y",
+          "INT"
+        ],
+        [
+          "Z",
+          "INT"
+        ],
+        [
+          "Is Tile",
+          "BOOLEAN"
+        ],
+        [
+          "Extent",
+          "INT"
+        ]
+      ]
+    },
+    "GeometryNodeGridTopologyBoolean": {
+      "inputs": [
+        [
+          "Operation",
+          "MENU"
+        ],
+        [
+          "Grid 1",
+          "VALUE"
+        ],
+        [
+          "Grid 2",
+          "VALUE"
+        ]
+      ],
+      "outputs": [
+        [
+          "Grid",
+          "VALUE"
+        ]
+      ]
+    },
+    "GeometryNodeGridVoxelize": {
+      "inputs": [
+        [
+          "Grid",
+          "VALUE"
+        ]
+      ],
+      "outputs": [
+        [
+          "Grid",
+          "VALUE"
+        ]
+      ]
+    },
+    "GeometryNodeGroup": {
+      "inputs": [],
+      "outputs": []
+    },
+    "GeometryNodeImageInfo": {
+      "inputs": [
+        [
+          "Image",
+          "IMAGE"
+        ],
+        [
+          "Frame",
+          "INT"
+        ]
+      ],
+      "outputs": [
+        [
+          "Width",
+          "INT"
+        ],
+        [
+          "Height",
+          "INT"
+        ],
+        [
+          "Has Alpha",
+          "BOOLEAN"
+        ],
+        [
+          "Frame Count",
+          "INT"
+        ],
+        [
+          "FPS",
+          "VALUE"
+        ]
+      ]
+    },
+    "GeometryNodeImageTexture": {
+      "inputs": [
+        [
+          "Image",
+          "IMAGE"
+        ],
+        [
+          "Vector",
+          "VECTOR"
+        ],
+        [
+          "Frame",
+          "INT"
+        ]
+      ],
+      "outputs": [
+        [
+          "Color",
+          "RGBA"
+        ],
+        [
+          "Alpha",
+          "VALUE"
+        ]
+      ]
+    },
+    "GeometryNodeImportCSV": {
+      "inputs": [
+        [
+          "Path",
+          "STRING"
+        ],
+        [
+          "Delimiter",
+          "STRING"
+        ]
+      ],
+      "outputs": [
+        [
+          "Point Cloud",
+          "GEOMETRY"
+        ]
+      ]
+    },
+    "GeometryNodeImportOBJ": {
+      "inputs": [
+        [
+          "Path",
+          "STRING"
+        ]
+      ],
+      "outputs": [
+        [
+          "Instances",
+          "GEOMETRY"
+        ]
+      ]
+    },
+    "GeometryNodeImportPLY": {
+      "inputs": [
+        [
+          "Path",
+          "STRING"
+        ]
+      ],
+      "outputs": [
+        [
+          "Geometry",
+          "GEOMETRY"
+        ]
+      ]
+    },
+    "GeometryNodeImportSPZ": {
+      "inputs": [
+        [
+          "Path",
+          "STRING"
+        ]
+      ],
+      "outputs": [
+        [
+          "Points",
+          "GEOMETRY"
+        ]
+      ]
+    },
+    "GeometryNodeImportSTL": {
+      "inputs": [
+        [
+          "Path",
+          "STRING"
+        ]
+      ],
+      "outputs": [
+        [
+          "Mesh",
+          "GEOMETRY"
+        ]
+      ]
+    },
+    "GeometryNodeImportText": {
+      "inputs": [
+        [
+          "Path",
+          "STRING"
+        ]
+      ],
+      "outputs": [
+        [
+          "String",
+          "STRING"
+        ]
+      ]
+    },
+    "GeometryNodeImportVDB": {
+      "inputs": [
+        [
+          "Path",
+          "STRING"
+        ]
+      ],
+      "outputs": [
+        [
+          "Volume",
+          "GEOMETRY"
+        ]
+      ]
+    },
+    "GeometryNodeIndexOfNearest": {
+      "inputs": [
+        [
+          "Position",
+          "VECTOR"
+        ],
+        [
+          "Group ID",
+          "INT"
+        ]
+      ],
+      "outputs": [
+        [
+          "Index",
+          "INT"
+        ],
+        [
+          "Has Neighbor",
+          "BOOLEAN"
+        ]
+      ]
+    },
+    "GeometryNodeIndexSwitch": {
+      "inputs": [
+        [
+          "Index",
+          "INT"
+        ],
+        [
+          "0",
+          "VALUE"
+        ],
+        [
+          "1",
+          "VALUE"
+        ],
+        [
+          "",
+          "CUSTOM"
+        ]
+      ],
+      "outputs": [
+        [
+          "Output",
+          "VALUE"
+        ]
+      ]
+    },
+    "GeometryNodeInputActiveCamera": {
+      "inputs": [],
+      "outputs": [
+        [
+          "Active Camera",
+          "OBJECT"
+        ]
+      ]
+    },
+    "GeometryNodeInputCollection": {
+      "inputs": [],
+      "outputs": [
+        [
+          "Collection",
+          "COLLECTION"
+        ]
+      ]
+    },
+    "GeometryNodeInputCurveHandlePositions": {
+      "inputs": [
+        [
+          "Relative",
+          "BOOLEAN"
+        ]
+      ],
+      "outputs": [
+        [
+          "Left",
+          "VECTOR"
+        ],
+        [
+          "Right",
+          "VECTOR"
+        ]
+      ]
+    },
+    "GeometryNodeInputCurveTilt": {
+      "inputs": [],
+      "outputs": [
+        [
+          "Tilt",
+          "VALUE"
+        ]
+      ]
+    },
+    "GeometryNodeInputEdgeSmooth": {
+      "inputs": [],
+      "outputs": [
+        [
+          "Smooth",
+          "BOOLEAN"
+        ]
+      ]
+    },
+    "GeometryNodeInputFont": {
+      "inputs": [],
+      "outputs": [
+        [
+          "Font",
+          "FONT"
+        ]
+      ]
+    },
+    "GeometryNodeInputID": {
+      "inputs": [],
+      "outputs": [
+        [
+          "ID",
+          "INT"
+        ]
+      ]
+    },
+    "GeometryNodeInputImage": {
+      "inputs": [],
+      "outputs": [
+        [
+          "Image",
+          "IMAGE"
+        ]
+      ]
+    },
+    "GeometryNodeInputIndex": {
+      "inputs": [],
+      "outputs": [
+        [
+          "Index",
+          "INT"
+        ]
+      ]
+    },
+    "GeometryNodeInputInstanceBounds": {
+      "inputs": [
+        [
+          "Use Radius",
+          "BOOLEAN"
+        ]
+      ],
+      "outputs": [
+        [
+          "Min",
+          "VECTOR"
+        ],
+        [
+          "Max",
+          "VECTOR"
+        ]
+      ]
+    },
+    "GeometryNodeInputInstanceReference": {
+      "inputs": [],
+      "outputs": [
+        [
+          "Reference Index",
+          "INT"
+        ]
+      ]
+    },
+    "GeometryNodeInputInstanceRotation": {
+      "inputs": [],
+      "outputs": [
+        [
+          "Rotation",
+          "ROTATION"
+        ]
+      ]
+    },
+    "GeometryNodeInputInstanceScale": {
+      "inputs": [],
+      "outputs": [
+        [
+          "Scale",
+          "VECTOR"
+        ]
+      ]
+    },
+    "GeometryNodeInputMaterial": {
+      "inputs": [],
+      "outputs": [
+        [
+          "Material",
+          "MATERIAL"
+        ]
+      ]
+    },
+    "GeometryNodeInputMaterialIndex": {
+      "inputs": [],
+      "outputs": [
+        [
+          "Material Index",
+          "INT"
+        ]
+      ]
+    },
+    "GeometryNodeInputMeshEdgeAngle": {
+      "inputs": [],
+      "outputs": [
+        [
+          "Unsigned Angle",
+          "VALUE"
+        ],
+        [
+          "Signed Angle",
+          "VALUE"
+        ]
+      ]
+    },
+    "GeometryNodeInputMeshEdgeNeighbors": {
+      "inputs": [],
+      "outputs": [
+        [
+          "Face Count",
+          "INT"
+        ]
+      ]
+    },
+    "GeometryNodeInputMeshEdgeVertices": {
+      "inputs": [],
+      "outputs": [
+        [
+          "Vertex Index 1",
+          "INT"
+        ],
+        [
+          "Vertex Index 2",
+          "INT"
+        ],
+        [
+          "Position 1",
+          "VECTOR"
+        ],
+        [
+          "Position 2",
+          "VECTOR"
+        ]
+      ]
+    },
+    "GeometryNodeInputMeshFaceArea": {
+      "inputs": [],
+      "outputs": [
+        [
+          "Area",
+          "VALUE"
+        ]
+      ]
+    },
+    "GeometryNodeInputMeshFaceIsPlanar": {
+      "inputs": [
+        [
+          "Threshold",
+          "VALUE"
+        ]
+      ],
+      "outputs": [
+        [
+          "Planar",
+          "BOOLEAN"
+        ]
+      ]
+    },
+    "GeometryNodeInputMeshFaceNeighbors": {
+      "inputs": [],
+      "outputs": [
+        [
+          "Vertex Count",
+          "INT"
+        ],
+        [
+          "Face Count",
+          "INT"
+        ]
+      ]
+    },
+    "GeometryNodeInputMeshIsland": {
+      "inputs": [],
+      "outputs": [
+        [
+          "Island Index",
+          "INT"
+        ],
+        [
+          "Island Count",
+          "INT"
+        ]
+      ]
+    },
+    "GeometryNodeInputMeshVertexNeighbors": {
+      "inputs": [],
+      "outputs": [
+        [
+          "Vertex Count",
+          "INT"
+        ],
+        [
+          "Face Count",
+          "INT"
+        ]
+      ]
+    },
+    "GeometryNodeInputNamedAttribute": {
+      "inputs": [
+        [
+          "Name",
+          "STRING"
+        ]
+      ],
+      "outputs": [
+        [
+          "Attribute",
+          "VALUE"
+        ],
+        [
+          "Exists",
+          "BOOLEAN"
+        ]
+      ]
+    },
+    "GeometryNodeInputNamedLayerSelection": {
+      "inputs": [
+        [
+          "Name",
+          "STRING"
+        ]
+      ],
+      "outputs": [
+        [
+          "Selection",
+          "BOOLEAN"
+        ]
+      ]
+    },
+    "GeometryNodeInputNormal": {
+      "inputs": [],
+      "outputs": [
+        [
+          "Normal",
+          "VECTOR"
+        ],
+        [
+          "True Normal",
+          "VECTOR"
+        ]
+      ]
+    },
+    "GeometryNodeInputObject": {
+      "inputs": [],
+      "outputs": [
+        [
+          "Object",
+          "OBJECT"
+        ]
+      ]
+    },
+    "GeometryNodeInputPosition": {
+      "inputs": [],
+      "outputs": [
+        [
+          "Position",
+          "VECTOR"
+        ]
+      ]
+    },
+    "GeometryNodeInputRadius": {
+      "inputs": [],
+      "outputs": [
+        [
+          "Radius",
+          "VALUE"
+        ]
+      ]
+    },
+    "GeometryNodeInputSceneTime": {
+      "inputs": [],
+      "outputs": [
+        [
+          "Seconds",
+          "VALUE"
+        ],
+        [
+          "Frame",
+          "VALUE"
+        ]
+      ]
+    },
+    "GeometryNodeInputShadeSmooth": {
+      "inputs": [],
+      "outputs": [
+        [
+          "Smooth",
+          "BOOLEAN"
+        ]
+      ]
+    },
+    "GeometryNodeInputShortestEdgePaths": {
+      "inputs": [
+        [
+          "End Vertex",
+          "BOOLEAN"
+        ],
+        [
+          "Edge Cost",
+          "VALUE"
+        ]
+      ],
+      "outputs": [
+        [
+          "Next Vertex Index",
+          "INT"
+        ],
+        [
+          "Total Cost",
+          "VALUE"
+        ]
+      ]
+    },
+    "GeometryNodeInputSplineCyclic": {
+      "inputs": [],
+      "outputs": [
+        [
+          "Cyclic",
+          "BOOLEAN"
+        ]
+      ]
+    },
+    "GeometryNodeInputSplineResolution": {
+      "inputs": [],
+      "outputs": [
+        [
+          "Resolution",
+          "INT"
+        ]
+      ]
+    },
+    "GeometryNodeInputTangent": {
+      "inputs": [],
+      "outputs": [
+        [
+          "Tangent",
+          "VECTOR"
+        ]
+      ]
+    },
+    "GeometryNodeInputVoxelIndex": {
+      "inputs": [],
+      "outputs": [
+        [
+          "X",
+          "INT"
+        ],
+        [
+          "Y",
+          "INT"
+        ],
+        [
+          "Z",
+          "INT"
+        ],
+        [
+          "Is Tile",
+          "BOOLEAN"
+        ],
+        [
+          "Extent X",
+          "INT"
+        ],
+        [
+          "Extent Y",
+          "INT"
+        ],
+        [
+          "Extent Z",
+          "INT"
+        ]
+      ]
+    },
+    "GeometryNodeInstanceOnPoints": {
+      "inputs": [
+        [
+          "Points",
+          "GEOMETRY"
+        ],
+        [
+          "Selection",
+          "BOOLEAN"
+        ],
+        [
+          "Instance",
+          "GEOMETRY"
+        ],
+        [
+          "Pick Instance",
+          "BOOLEAN"
+        ],
+        [
+          "Instance Index",
+          "INT"
+        ],
+        [
+          "Rotation",
+          "ROTATION"
+        ],
+        [
+          "Scale",
+          "VECTOR"
+        ]
+      ],
+      "outputs": [
+        [
+          "Instances",
+          "GEOMETRY"
+        ]
+      ]
+    },
+    "GeometryNodeInstanceTransform": {
+      "inputs": [],
+      "outputs": [
+        [
+          "Transform",
+          "MATRIX"
+        ]
+      ]
+    },
+    "GeometryNodeInstancesToPoints": {
+      "inputs": [
+        [
+          "Instances",
+          "GEOMETRY"
+        ],
+        [
+          "Selection",
+          "BOOLEAN"
+        ],
+        [
+          "Position",
+          "VECTOR"
+        ],
+        [
+          "Radius",
+          "VALUE"
+        ]
+      ],
+      "outputs": [
+        [
+          "Points",
+          "GEOMETRY"
+        ]
+      ]
+    },
+    "GeometryNodeInterpolateCurves": {
+      "inputs": [
+        [
+          "Guide Curves",
+          "GEOMETRY"
+        ],
+        [
+          "Guide Up",
+          "VECTOR"
+        ],
+        [
+          "Guide Group ID",
+          "INT"
+        ],
+        [
+          "Points",
+          "GEOMETRY"
+        ],
+        [
+          "Point Up",
+          "VECTOR"
+        ],
+        [
+          "Point Group ID",
+          "INT"
+        ],
+        [
+          "Max Neighbors",
+          "INT"
+        ]
+      ],
+      "outputs": [
+        [
+          "Curves",
+          "GEOMETRY"
+        ],
+        [
+          "Closest Index",
+          "INT"
+        ],
+        [
+          "Closest Weight",
+          "VALUE"
+        ]
+      ]
+    },
+    "GeometryNodeIsViewport": {
+      "inputs": [],
+      "outputs": [
+        [
+          "Is Viewport",
+          "BOOLEAN"
+        ]
+      ]
+    },
+    "GeometryNodeJoinGeometry": {
+      "inputs": [
+        [
+          "Geometry",
+          "GEOMETRY"
+        ]
+      ],
+      "outputs": [
+        [
+          "Geometry",
+          "GEOMETRY"
+        ]
+      ]
+    },
+    "GeometryNodeListGetItem": {
+      "inputs": [
+        [
+          "List",
+          "VALUE"
+        ],
+        [
+          "Index",
+          "INT"
+        ]
+      ],
+      "outputs": [
+        [
+          "Value",
+          "VALUE"
+        ]
+      ]
+    },
+    "GeometryNodeListLength": {
+      "inputs": [
+        [
+          "List",
+          "VALUE"
+        ]
+      ],
+      "outputs": [
+        [
+          "Length",
+          "INT"
+        ]
+      ]
+    },
+    "GeometryNodeMaterialSelection": {
+      "inputs": [
+        [
+          "Material",
+          "MATERIAL"
+        ]
+      ],
+      "outputs": [
+        [
+          "Selection",
+          "BOOLEAN"
+        ]
+      ]
+    },
+    "GeometryNodeMenuSwitch": {
+      "inputs": [
+        [
+          "Menu",
+          "MENU"
+        ],
+        [
+          "A",
+          "GEOMETRY"
+        ],
+        [
+          "B",
+          "GEOMETRY"
+        ],
+        [
+          "",
+          "CUSTOM"
+        ]
+      ],
+      "outputs": [
+        [
+          "Output",
+          "GEOMETRY"
+        ],
+        [
+          "A",
+          "BOOLEAN"
+        ],
+        [
+          "B",
+          "BOOLEAN"
+        ]
+      ]
+    },
+    "GeometryNodeMergeByDistance": {
+      "inputs": [
+        [
+          "Geometry",
+          "GEOMETRY"
+        ],
+        [
+          "Selection",
+          "BOOLEAN"
+        ],
+        [
+          "Mode",
+          "MENU"
+        ],
+        [
+          "Distance",
+          "VALUE"
+        ]
+      ],
+      "outputs": [
+        [
+          "Geometry",
+          "GEOMETRY"
+        ]
+      ]
+    },
+    "GeometryNodeMergeLayers": {
+      "inputs": [
+        [
+          "Grease Pencil",
+          "GEOMETRY"
+        ],
+        [
+          "Selection",
+          "BOOLEAN"
+        ],
+        [
+          "Mode",
+          "MENU"
+        ],
+        [
+          "Group ID",
+          "INT"
+        ]
+      ],
+      "outputs": [
+        [
+          "Grease Pencil",
+          "GEOMETRY"
+        ]
+      ]
+    },
+    "GeometryNodeMergePoints": {
+      "inputs": [
+        [
+          "Geometry",
+          "GEOMETRY"
+        ],
+        [
+          "Selection",
+          "BOOLEAN"
+        ],
+        [
+          "Merge ID",
+          "INT"
+        ]
+      ],
+      "outputs": [
+        [
+          "Geometry",
+          "GEOMETRY"
+        ]
+      ]
+    },
+    "GeometryNodeMeshBevel": {
+      "inputs": [
+        [
+          "Mesh",
+          "GEOMETRY"
+        ],
+        [
+          "Selection",
+          "BOOLEAN"
+        ],
+        [
+          "Affect Kind",
+          "MENU"
+        ],
+        [
+          "Start Left Offset",
+          "VALUE"
+        ],
+        [
+          "Start Right Offset",
+          "VALUE"
+        ],
+        [
+          "End Left Offset",
+          "VALUE"
+        ],
+        [
+          "End Right Offset",
+          "VALUE"
+        ],
+        [
+          "Offset",
+          "VALUE"
+        ],
+        [
+          "Miter",
+          "BOOLEAN"
+        ],
+        [
+          "Spread",
+          "VALUE"
+        ],
+        [
+          "Segments",
+          "INT"
+        ],
+        [
+          "Shape",
+          "VALUE"
+        ],
+        [
+          "Profile",
+          "GEOMETRY"
+        ]
+      ],
+      "outputs": [
+        [
+          "Mesh",
+          "GEOMETRY"
+        ],
+        [
+          "Vertex Face",
+          "BOOLEAN"
+        ],
+        [
+          "Edge Face",
+          "BOOLEAN"
+        ],
+        [
+          "Outer Edge",
+          "BOOLEAN"
+        ],
+        [
+          "Mid Edge",
+          "BOOLEAN"
+        ]
+      ]
+    },
+    "GeometryNodeMeshBoolean": {
+      "inputs": [
+        [
+          "Mesh 1",
+          "GEOMETRY"
+        ],
+        [
+          "Mesh 2",
+          "GEOMETRY"
+        ],
+        [
+          "Self Intersection",
+          "BOOLEAN"
+        ],
+        [
+          "Hole Tolerant",
+          "BOOLEAN"
+        ]
+      ],
+      "outputs": [
+        [
+          "Mesh",
+          "GEOMETRY"
+        ],
+        [
+          "Intersecting Edges",
+          "BOOLEAN"
+        ]
+      ]
+    },
+    "GeometryNodeMeshCircle": {
+      "inputs": [
+        [
+          "Vertices",
+          "INT"
+        ],
+        [
+          "Radius",
+          "VALUE"
+        ]
+      ],
+      "outputs": [
+        [
+          "Mesh",
+          "GEOMETRY"
+        ]
+      ]
+    },
+    "GeometryNodeMeshCone": {
+      "inputs": [
+        [
+          "Vertices",
+          "INT"
+        ],
+        [
+          "Side Segments",
+          "INT"
+        ],
+        [
+          "Fill Segments",
+          "INT"
+        ],
+        [
+          "Radius Top",
+          "VALUE"
+        ],
+        [
+          "Radius Bottom",
+          "VALUE"
+        ],
+        [
+          "Depth",
+          "VALUE"
+        ]
+      ],
+      "outputs": [
+        [
+          "Mesh",
+          "GEOMETRY"
+        ],
+        [
+          "Top",
+          "BOOLEAN"
+        ],
+        [
+          "Bottom",
+          "BOOLEAN"
+        ],
+        [
+          "Side",
+          "BOOLEAN"
+        ],
+        [
+          "UV Map",
+          "VECTOR"
+        ]
+      ]
+    },
+    "GeometryNodeMeshCube": {
+      "inputs": [
+        [
+          "Size",
+          "VECTOR"
+        ],
+        [
+          "Vertices X",
+          "INT"
+        ],
+        [
+          "Vertices Y",
+          "INT"
+        ],
+        [
+          "Vertices Z",
+          "INT"
+        ]
+      ],
+      "outputs": [
+        [
+          "Mesh",
+          "GEOMETRY"
+        ],
+        [
+          "UV Map",
+          "VECTOR"
+        ]
+      ]
+    },
+    "GeometryNodeMeshCylinder": {
+      "inputs": [
+        [
+          "Vertices",
+          "INT"
+        ],
+        [
+          "Side Segments",
+          "INT"
+        ],
+        [
+          "Fill Segments",
+          "INT"
+        ],
+        [
+          "Radius",
+          "VALUE"
+        ],
+        [
+          "Depth",
+          "VALUE"
+        ]
+      ],
+      "outputs": [
+        [
+          "Mesh",
+          "GEOMETRY"
+        ],
+        [
+          "Top",
+          "BOOLEAN"
+        ],
+        [
+          "Side",
+          "BOOLEAN"
+        ],
+        [
+          "Bottom",
+          "BOOLEAN"
+        ],
+        [
+          "UV Map",
+          "VECTOR"
+        ]
+      ]
+    },
+    "GeometryNodeMeshFaceSetBoundaries": {
+      "inputs": [
+        [
+          "Face Group ID",
+          "INT"
+        ]
+      ],
+      "outputs": [
+        [
+          "Boundary Edges",
+          "BOOLEAN"
+        ]
+      ]
+    },
+    "GeometryNodeMeshGrid": {
+      "inputs": [
+        [
+          "Size X",
+          "VALUE"
+        ],
+        [
+          "Size Y",
+          "VALUE"
+        ],
+        [
+          "Vertices X",
+          "INT"
+        ],
+        [
+          "Vertices Y",
+          "INT"
+        ]
+      ],
+      "outputs": [
+        [
+          "Mesh",
+          "GEOMETRY"
+        ],
+        [
+          "UV Map",
+          "VECTOR"
+        ]
+      ]
+    },
+    "GeometryNodeMeshIcoSphere": {
+      "inputs": [
+        [
+          "Radius",
+          "VALUE"
+        ],
+        [
+          "Subdivisions",
+          "INT"
+        ]
+      ],
+      "outputs": [
+        [
+          "Mesh",
+          "GEOMETRY"
+        ],
+        [
+          "UV Map",
+          "VECTOR"
+        ]
+      ]
+    },
+    "GeometryNodeMeshLine": {
+      "inputs": [
+        [
+          "Count",
+          "INT"
+        ],
+        [
+          "Resolution",
+          "VALUE"
+        ],
+        [
+          "Start Location",
+          "VECTOR"
+        ],
+        [
+          "Offset",
+          "VECTOR"
+        ]
+      ],
+      "outputs": [
+        [
+          "Mesh",
+          "GEOMETRY"
+        ]
+      ]
+    },
+    "GeometryNodeMeshToCurve": {
+      "inputs": [
+        [
+          "Mesh",
+          "GEOMETRY"
+        ],
+        [
+          "Selection",
+          "BOOLEAN"
+        ]
+      ],
+      "outputs": [
+        [
+          "Curve",
+          "GEOMETRY"
+        ]
+      ]
+    },
+    "GeometryNodeMeshToDensityGrid": {
+      "inputs": [
+        [
+          "Mesh",
+          "GEOMETRY"
+        ],
+        [
+          "Density",
+          "VALUE"
+        ],
+        [
+          "Voxel Size",
+          "VALUE"
+        ],
+        [
+          "Gradient Width",
+          "VALUE"
+        ]
+      ],
+      "outputs": [
+        [
+          "Density Grid",
+          "VALUE"
+        ]
+      ]
+    },
+    "GeometryNodeMeshToPoints": {
+      "inputs": [
+        [
+          "Mesh",
+          "GEOMETRY"
+        ],
+        [
+          "Selection",
+          "BOOLEAN"
+        ],
+        [
+          "Position",
+          "VECTOR"
+        ],
+        [
+          "Radius",
+          "VALUE"
+        ]
+      ],
+      "outputs": [
+        [
+          "Points",
+          "GEOMETRY"
+        ]
+      ]
+    },
+    "GeometryNodeMeshToSDFGrid": {
+      "inputs": [
+        [
+          "Mesh",
+          "GEOMETRY"
+        ],
+        [
+          "Voxel Size",
+          "VALUE"
+        ],
+        [
+          "Band Width",
+          "INT"
+        ]
+      ],
+      "outputs": [
+        [
+          "SDF Grid",
+          "VALUE"
+        ]
+      ]
+    },
+    "GeometryNodeMeshToVolume": {
+      "inputs": [
+        [
+          "Mesh",
+          "GEOMETRY"
+        ],
+        [
+          "Density",
+          "VALUE"
+        ],
+        [
+          "Resolution Mode",
+          "MENU"
+        ],
+        [
+          "Voxel Size",
+          "VALUE"
+        ],
+        [
+          "Voxel Amount",
+          "VALUE"
+        ],
+        [
+          "Interior Band Width",
+          "VALUE"
+        ]
+      ],
+      "outputs": [
+        [
+          "Volume",
+          "GEOMETRY"
+        ]
+      ]
+    },
+    "GeometryNodeMeshUVSphere": {
+      "inputs": [
+        [
+          "Segments",
+          "INT"
+        ],
+        [
+          "Rings",
+          "INT"
+        ],
+        [
+          "Radius",
+          "VALUE"
+        ]
+      ],
+      "outputs": [
+        [
+          "Mesh",
+          "GEOMETRY"
+        ],
+        [
+          "UV Map",
+          "VECTOR"
+        ]
+      ]
+    },
+    "GeometryNodeNURBSOrder": {
+      "inputs": [],
+      "outputs": [
+        [
+          "Order",
+          "INT"
+        ]
+      ]
+    },
+    "GeometryNodeNURBSWeight": {
+      "inputs": [],
+      "outputs": [
+        [
+          "Weight",
+          "VALUE"
+        ]
+      ]
+    },
+    "GeometryNodeObjectInfo": {
+      "inputs": [
+        [
+          "Object",
+          "OBJECT"
+        ],
+        [
+          "As Instance",
+          "BOOLEAN"
+        ]
+      ],
+      "outputs": [
+        [
+          "Transform",
+          "MATRIX"
+        ],
+        [
+          "Location",
+          "VECTOR"
+        ],
+        [
+          "Rotation",
+          "ROTATION"
+        ],
+        [
+          "Scale",
+          "VECTOR"
+        ],
+        [
+          "Geometry",
+          "GEOMETRY"
+        ]
+      ]
+    },
+    "GeometryNodeOffsetCornerInFace": {
+      "inputs": [
+        [
+          "Corner Index",
+          "INT"
+        ],
+        [
+          "Offset",
+          "INT"
+        ]
+      ],
+      "outputs": [
+        [
+          "Corner Index",
+          "INT"
+        ]
+      ]
+    },
+    "GeometryNodeOffsetPointInCurve": {
+      "inputs": [
+        [
+          "Point Index",
+          "INT"
+        ],
+        [
+          "Offset",
+          "INT"
+        ]
+      ],
+      "outputs": [
+        [
+          "Is Valid Offset",
+          "BOOLEAN"
+        ],
+        [
+          "Point Index",
+          "INT"
+        ]
+      ]
+    },
+    "GeometryNodePoints": {
+      "inputs": [
+        [
+          "Count",
+          "INT"
+        ],
+        [
+          "Position",
+          "VECTOR"
+        ],
+        [
+          "Radius",
+          "VALUE"
+        ]
+      ],
+      "outputs": [
+        [
+          "Points",
+          "GEOMETRY"
+        ]
+      ]
+    },
+    "GeometryNodePointsOfCurve": {
+      "inputs": [
+        [
+          "Curve Index",
+          "INT"
+        ],
+        [
+          "Weights",
+          "VALUE"
+        ],
+        [
+          "Sort Index",
+          "INT"
+        ]
+      ],
+      "outputs": [
+        [
+          "Point Index",
+          "INT"
+        ],
+        [
+          "Total",
+          "INT"
+        ]
+      ]
+    },
+    "GeometryNodePointsSetType": {
+      "inputs": [
+        [
+          "Points",
+          "GEOMETRY"
+        ],
+        [
+          "Type",
+          "MENU"
+        ]
+      ],
+      "outputs": [
+        [
+          "Points",
+          "GEOMETRY"
+        ]
+      ]
+    },
+    "GeometryNodePointsToCurves": {
+      "inputs": [
+        [
+          "Points",
+          "GEOMETRY"
+        ],
+        [
+          "Curve Group ID",
+          "INT"
+        ],
+        [
+          "Weight",
+          "VALUE"
+        ]
+      ],
+      "outputs": [
+        [
+          "Curves",
+          "GEOMETRY"
+        ]
+      ]
+    },
+    "GeometryNodePointsToSDFGrid": {
+      "inputs": [
+        [
+          "Points",
+          "GEOMETRY"
+        ],
+        [
+          "Radius",
+          "VALUE"
+        ],
+        [
+          "Voxel Size",
+          "VALUE"
+        ]
+      ],
+      "outputs": [
+        [
+          "SDF Grid",
+          "VALUE"
+        ]
+      ]
+    },
+    "GeometryNodePointsToVertices": {
+      "inputs": [
+        [
+          "Points",
+          "GEOMETRY"
+        ],
+        [
+          "Selection",
+          "BOOLEAN"
+        ]
+      ],
+      "outputs": [
+        [
+          "Mesh",
+          "GEOMETRY"
+        ]
+      ]
+    },
+    "GeometryNodePointsToVolume": {
+      "inputs": [
+        [
+          "Points",
+          "GEOMETRY"
+        ],
+        [
+          "Density",
+          "VALUE"
+        ],
+        [
+          "Resolution Mode",
+          "MENU"
+        ],
+        [
+          "Voxel Size",
+          "VALUE"
+        ],
+        [
+          "Voxel Amount",
+          "VALUE"
+        ],
+        [
+          "Radius",
+          "VALUE"
+        ]
+      ],
+      "outputs": [
+        [
+          "Volume",
+          "GEOMETRY"
+        ]
+      ]
+    },
+    "GeometryNodeProximity": {
+      "inputs": [
+        [
+          "Geometry",
+          "GEOMETRY"
+        ],
+        [
+          "Group ID",
+          "INT"
+        ],
+        [
+          "Sample Position",
+          "VECTOR"
+        ],
+        [
+          "Sample Group ID",
+          "INT"
+        ]
+      ],
+      "outputs": [
+        [
+          "Position",
+          "VECTOR"
+        ],
+        [
+          "Distance",
+          "VALUE"
+        ],
+        [
+          "Is Valid",
+          "BOOLEAN"
+        ]
+      ]
+    },
+    "GeometryNodeRasterizePoints": {
+      "inputs": [
+        [
+          "Points",
+          "GEOMETRY"
+        ],
+        [
+          "Grid Transform Mode",
+          "MENU"
+        ],
+        [
+          "Voxel Size",
+          "VALUE"
+        ],
+        [
+          "Matrix",
+          "MATRIX"
+        ],
+        [
+          "Kernel Type",
+          "MENU"
+        ],
+        [
+          "Position",
+          "VECTOR"
+        ],
+        [
+          "",
+          "CUSTOM"
+        ]
+      ],
+      "outputs": [
+        [
+          "",
+          "CUSTOM"
+        ]
+      ]
+    },
+    "GeometryNodeRaycast": {
+      "inputs": [
+        [
+          "Target Geometry",
+          "GEOMETRY"
+        ],
+        [
+          "Attribute",
+          "VALUE"
+        ],
+        [
+          "Interpolation",
+          "MENU"
+        ],
+        [
+          "Source Position",
+          "VECTOR"
+        ],
+        [
+          "Ray Direction",
+          "VECTOR"
+        ],
+        [
+          "Ray Length",
+          "VALUE"
+        ]
+      ],
+      "outputs": [
+        [
+          "Is Hit",
+          "BOOLEAN"
+        ],
+        [
+          "Hit Position",
+          "VECTOR"
+        ],
+        [
+          "Hit Normal",
+          "VECTOR"
+        ],
+        [
+          "Hit Distance",
+          "VALUE"
+        ],
+        [
+          "Attribute",
+          "VALUE"
+        ]
+      ]
+    },
+    "GeometryNodeRealizeInstances": {
+      "inputs": [
+        [
+          "Geometry",
+          "GEOMETRY"
+        ],
+        [
+          "Selection",
+          "BOOLEAN"
+        ],
+        [
+          "Realize All",
+          "BOOLEAN"
+        ],
+        [
+          "Depth",
+          "INT"
+        ],
+        [
+          "Preserve Normals",
+          "BOOLEAN"
+        ]
+      ],
+      "outputs": [
+        [
+          "Geometry",
+          "GEOMETRY"
+        ]
+      ]
+    },
+    "GeometryNodeRemoveAttribute": {
+      "inputs": [
+        [
+          "Geometry",
+          "GEOMETRY"
+        ],
+        [
+          "Pattern Mode",
+          "MENU"
+        ],
+        [
+          "Name",
+          "STRING"
+        ]
+      ],
+      "outputs": [
+        [
+          "Geometry",
+          "GEOMETRY"
+        ]
+      ]
+    },
+    "GeometryNodeRenameAttribute": {
+      "inputs": [
+        [
+          "Geometry",
+          "GEOMETRY"
+        ],
+        [
+          "Mode",
+          "MENU"
+        ],
+        [
+          "Old",
+          "STRING"
+        ],
+        [
+          "New",
+          "STRING"
+        ],
+        [
+          "Overwrite",
+          "BOOLEAN"
+        ]
+      ],
+      "outputs": [
+        [
+          "Geometry",
+          "GEOMETRY"
+        ]
+      ]
+    },
+    "GeometryNodeRepeatInput": {
+      "inputs": [
+        [
+          "Iterations",
+          "INT"
+        ],
+        [
+          "",
+          "CUSTOM"
+        ]
+      ],
+      "outputs": [
+        [
+          "Iteration",
+          "INT"
+        ],
+        [
+          "",
+          "CUSTOM"
+        ]
+      ]
+    },
+    "GeometryNodeRepeatOutput": {
+      "inputs": [
+        [
+          "Geometry",
+          "GEOMETRY"
+        ],
+        [
+          "",
+          "CUSTOM"
+        ]
+      ],
+      "outputs": [
+        [
+          "Geometry",
+          "GEOMETRY"
+        ],
+        [
+          "",
+          "CUSTOM"
+        ]
+      ]
+    },
+    "GeometryNodeReplaceMaterial": {
+      "inputs": [
+        [
+          "Geometry",
+          "GEOMETRY"
+        ],
+        [
+          "Old",
+          "MATERIAL"
+        ],
+        [
+          "New",
+          "MATERIAL"
+        ]
+      ],
+      "outputs": [
+        [
+          "Geometry",
+          "GEOMETRY"
+        ]
+      ]
+    },
+    "GeometryNodeResampleCurve": {
+      "inputs": [
+        [
+          "Curve",
+          "GEOMETRY"
+        ],
+        [
+          "Selection",
+          "BOOLEAN"
+        ],
+        [
+          "Mode",
+          "MENU"
+        ],
+        [
+          "Count",
+          "INT"
+        ],
+        [
+          "Length",
+          "VALUE"
+        ]
+      ],
+      "outputs": [
+        [
+          "Curve",
+          "GEOMETRY"
+        ]
+      ]
+    },
+    "GeometryNodeReverseCurve": {
+      "inputs": [
+        [
+          "Curve",
+          "GEOMETRY"
+        ],
+        [
+          "Selection",
+          "BOOLEAN"
+        ]
+      ],
+      "outputs": [
+        [
+          "Curve",
+          "GEOMETRY"
+        ]
+      ]
+    },
+    "GeometryNodeRotateInstances": {
+      "inputs": [
+        [
+          "Instances",
+          "GEOMETRY"
+        ],
+        [
+          "Selection",
+          "BOOLEAN"
+        ],
+        [
+          "Rotation",
+          "ROTATION"
+        ],
+        [
+          "Pivot Point",
+          "VECTOR"
+        ],
+        [
+          "Local Space",
+          "BOOLEAN"
+        ]
+      ],
+      "outputs": [
+        [
+          "Instances",
+          "GEOMETRY"
+        ]
+      ]
+    },
+    "GeometryNodeSDFGridBoolean": {
+      "inputs": [
+        [
+          "Grid 1",
+          "VALUE"
+        ],
+        [
+          "Grid 2",
+          "VALUE"
+        ]
+      ],
+      "outputs": [
+        [
+          "Grid",
+          "VALUE"
+        ]
+      ]
+    },
+    "GeometryNodeSDFGridFillet": {
+      "inputs": [
+        [
+          "Grid",
+          "VALUE"
+        ],
+        [
+          "Iterations",
+          "INT"
+        ]
+      ],
+      "outputs": [
+        [
+          "Grid",
+          "VALUE"
+        ]
+      ]
+    },
+    "GeometryNodeSDFGridLaplacian": {
+      "inputs": [
+        [
+          "Grid",
+          "VALUE"
+        ],
+        [
+          "Iterations",
+          "INT"
+        ]
+      ],
+      "outputs": [
+        [
+          "Grid",
+          "VALUE"
+        ]
+      ]
+    },
+    "GeometryNodeSDFGridMean": {
+      "inputs": [
+        [
+          "Grid",
+          "VALUE"
+        ],
+        [
+          "Width",
+          "INT"
+        ],
+        [
+          "Iterations",
+          "INT"
+        ]
+      ],
+      "outputs": [
+        [
+          "Grid",
+          "VALUE"
+        ]
+      ]
+    },
+    "GeometryNodeSDFGridMeanCurvature": {
+      "inputs": [
+        [
+          "Grid",
+          "VALUE"
+        ],
+        [
+          "Iterations",
+          "INT"
+        ]
+      ],
+      "outputs": [
+        [
+          "Grid",
+          "VALUE"
+        ]
+      ]
+    },
+    "GeometryNodeSDFGridMedian": {
+      "inputs": [
+        [
+          "Grid",
+          "VALUE"
+        ],
+        [
+          "Width",
+          "INT"
+        ],
+        [
+          "Iterations",
+          "INT"
+        ]
+      ],
+      "outputs": [
+        [
+          "Grid",
+          "VALUE"
+        ]
+      ]
+    },
+    "GeometryNodeSDFGridOffset": {
+      "inputs": [
+        [
+          "Grid",
+          "VALUE"
+        ],
+        [
+          "Distance",
+          "VALUE"
+        ]
+      ],
+      "outputs": [
+        [
+          "Grid",
+          "VALUE"
+        ]
+      ]
+    },
+    "GeometryNodeSampleCurve": {
+      "inputs": [
+        [
+          "Curves",
+          "GEOMETRY"
+        ],
+        [
+          "Value",
+          "VALUE"
+        ],
+        [
+          "Factor",
+          "VALUE"
+        ],
+        [
+          "Length",
+          "VALUE"
+        ],
+        [
+          "Curve Index",
+          "INT"
+        ]
+      ],
+      "outputs": [
+        [
+          "Value",
+          "VALUE"
+        ],
+        [
+          "Position",
+          "VECTOR"
+        ],
+        [
+          "Tangent",
+          "VECTOR"
+        ],
+        [
+          "Normal",
+          "VECTOR"
+        ]
+      ]
+    },
+    "GeometryNodeSampleGrid": {
+      "inputs": [
+        [
+          "Grid",
+          "VALUE"
+        ],
+        [
+          "Position",
+          "VECTOR"
+        ],
+        [
+          "Interpolation",
+          "MENU"
+        ]
+      ],
+      "outputs": [
+        [
+          "Value",
+          "VALUE"
+        ]
+      ]
+    },
+    "GeometryNodeSampleGridIndex": {
+      "inputs": [
+        [
+          "Grid",
+          "VALUE"
+        ],
+        [
+          "X",
+          "INT"
+        ],
+        [
+          "Y",
+          "INT"
+        ],
+        [
+          "Z",
+          "INT"
+        ]
+      ],
+      "outputs": [
+        [
+          "Value",
+          "VALUE"
+        ]
+      ]
+    },
+    "GeometryNodeSampleIndex": {
+      "inputs": [
+        [
+          "Geometry",
+          "GEOMETRY"
+        ],
+        [
+          "Value",
+          "VALUE"
+        ],
+        [
+          "Index",
+          "INT"
+        ]
+      ],
+      "outputs": [
+        [
+          "Value",
+          "VALUE"
+        ]
+      ]
+    },
+    "GeometryNodeSampleNearest": {
+      "inputs": [
+        [
+          "Geometry",
+          "GEOMETRY"
+        ],
+        [
+          "Sample Position",
+          "VECTOR"
+        ]
+      ],
+      "outputs": [
+        [
+          "Index",
+          "INT"
+        ]
+      ]
+    },
+    "GeometryNodeSampleNearestSurface": {
+      "inputs": [
+        [
+          "Mesh",
+          "GEOMETRY"
+        ],
+        [
+          "Value",
+          "VALUE"
+        ],
+        [
+          "Group ID",
+          "INT"
+        ],
+        [
+          "Sample Position",
+          "VECTOR"
+        ],
+        [
+          "Sample Group ID",
+          "INT"
+        ]
+      ],
+      "outputs": [
+        [
+          "Value",
+          "VALUE"
+        ],
+        [
+          "Is Valid",
+          "BOOLEAN"
+        ]
+      ]
+    },
+    "GeometryNodeSampleSoundFrequencies": {
+      "inputs": [
+        [
+          "Sound",
+          "SOUND"
+        ],
+        [
+          "Time",
+          "VALUE"
+        ],
+        [
+          "All Channels",
+          "BOOLEAN"
+        ],
+        [
+          "Channel",
+          "INT"
+        ],
+        [
+          "Low",
+          "VALUE"
+        ],
+        [
+          "High",
+          "VALUE"
+        ],
+        [
+          "FFT Size",
+          "MENU"
+        ],
+        [
+          "Window Function",
+          "MENU"
+        ]
+      ],
+      "outputs": [
+        [
+          "Amplitude",
+          "VALUE"
+        ]
+      ]
+    },
+    "GeometryNodeSampleUVSurface": {
+      "inputs": [
+        [
+          "Mesh",
+          "GEOMETRY"
+        ],
+        [
+          "Value",
+          "VALUE"
+        ],
+        [
+          "UV Map",
+          "VECTOR"
+        ],
+        [
+          "Sample UV",
+          "VECTOR"
+        ]
+      ],
+      "outputs": [
+        [
+          "Value",
+          "VALUE"
+        ],
+        [
+          "Is Valid",
+          "BOOLEAN"
+        ]
+      ]
+    },
+    "GeometryNodeScaleElements": {
+      "inputs": [
+        [
+          "Geometry",
+          "GEOMETRY"
+        ],
+        [
+          "Selection",
+          "BOOLEAN"
+        ],
+        [
+          "Scale",
+          "VALUE"
+        ],
+        [
+          "Center",
+          "VECTOR"
+        ],
+        [
+          "Scale Mode",
+          "MENU"
+        ],
+        [
+          "Axis",
+          "VECTOR"
+        ]
+      ],
+      "outputs": [
+        [
+          "Geometry",
+          "GEOMETRY"
+        ]
+      ]
+    },
+    "GeometryNodeScaleInstances": {
+      "inputs": [
+        [
+          "Instances",
+          "GEOMETRY"
+        ],
+        [
+          "Selection",
+          "BOOLEAN"
+        ],
+        [
+          "Scale",
+          "VECTOR"
+        ],
+        [
+          "Center",
+          "VECTOR"
+        ],
+        [
+          "Local Space",
+          "BOOLEAN"
+        ]
+      ],
+      "outputs": [
+        [
+          "Instances",
+          "GEOMETRY"
+        ]
+      ]
+    },
+    "GeometryNodeSelfObject": {
+      "inputs": [],
+      "outputs": [
+        [
+          "Self Object",
+          "OBJECT"
+        ]
+      ]
+    },
+    "GeometryNodeSeparateComponents": {
+      "inputs": [
+        [
+          "Geometry",
+          "GEOMETRY"
+        ]
+      ],
+      "outputs": [
+        [
+          "Mesh",
+          "GEOMETRY"
+        ],
+        [
+          "Curve",
+          "GEOMETRY"
+        ],
+        [
+          "Grease Pencil",
+          "GEOMETRY"
+        ],
+        [
+          "Point Cloud",
+          "GEOMETRY"
+        ],
+        [
+          "Volume",
+          "GEOMETRY"
+        ],
+        [
+          "Instances",
+          "GEOMETRY"
+        ]
+      ]
+    },
+    "GeometryNodeSeparateGeometry": {
+      "inputs": [
+        [
+          "Geometry",
+          "GEOMETRY"
+        ],
+        [
+          "Selection",
+          "BOOLEAN"
+        ]
+      ],
+      "outputs": [
+        [
+          "Selection",
+          "GEOMETRY"
+        ],
+        [
+          "Inverted",
+          "GEOMETRY"
+        ]
+      ]
+    },
+    "GeometryNodeSetCurveHandlePositions": {
+      "inputs": [
+        [
+          "Curve",
+          "GEOMETRY"
+        ],
+        [
+          "Selection",
+          "BOOLEAN"
+        ],
+        [
+          "Position",
+          "VECTOR"
+        ],
+        [
+          "Offset",
+          "VECTOR"
+        ]
+      ],
+      "outputs": [
+        [
+          "Curve",
+          "GEOMETRY"
+        ]
+      ]
+    },
+    "GeometryNodeSetCurveNormal": {
+      "inputs": [
+        [
+          "Curve",
+          "GEOMETRY"
+        ],
+        [
+          "Selection",
+          "BOOLEAN"
+        ],
+        [
+          "Mode",
+          "MENU"
+        ],
+        [
+          "Normal",
+          "VECTOR"
+        ]
+      ],
+      "outputs": [
+        [
+          "Curve",
+          "GEOMETRY"
+        ]
+      ]
+    },
+    "GeometryNodeSetCurveRadius": {
+      "inputs": [
+        [
+          "Curve",
+          "GEOMETRY"
+        ],
+        [
+          "Selection",
+          "BOOLEAN"
+        ],
+        [
+          "Radius",
+          "VALUE"
+        ]
+      ],
+      "outputs": [
+        [
+          "Curve",
+          "GEOMETRY"
+        ]
+      ]
+    },
+    "GeometryNodeSetCurveTilt": {
+      "inputs": [
+        [
+          "Curve",
+          "GEOMETRY"
+        ],
+        [
+          "Selection",
+          "BOOLEAN"
+        ],
+        [
+          "Tilt",
+          "VALUE"
+        ]
+      ],
+      "outputs": [
+        [
+          "Curve",
+          "GEOMETRY"
+        ]
+      ]
+    },
+    "GeometryNodeSetGeometryBundle": {
+      "inputs": [
+        [
+          "Geometry",
+          "GEOMETRY"
+        ],
+        [
+          "Bundle",
+          "BUNDLE"
+        ]
+      ],
+      "outputs": [
+        [
+          "Geometry",
+          "GEOMETRY"
+        ]
+      ]
+    },
+    "GeometryNodeSetGeometryName": {
+      "inputs": [
+        [
+          "Geometry",
+          "GEOMETRY"
+        ],
+        [
+          "Name",
+          "STRING"
+        ]
+      ],
+      "outputs": [
+        [
+          "Geometry",
+          "GEOMETRY"
+        ]
+      ]
+    },
+    "GeometryNodeSetGreasePencilColor": {
+      "inputs": [
+        [
+          "Grease Pencil",
+          "GEOMETRY"
+        ],
+        [
+          "Selection",
+          "BOOLEAN"
+        ],
+        [
+          "Mode",
+          "MENU"
+        ],
+        [
+          "Color",
+          "RGBA"
+        ],
+        [
+          "Opacity",
+          "VALUE"
+        ]
+      ],
+      "outputs": [
+        [
+          "Grease Pencil",
+          "GEOMETRY"
+        ]
+      ]
+    },
+    "GeometryNodeSetGreasePencilDepth": {
+      "inputs": [
+        [
+          "Grease Pencil",
+          "GEOMETRY"
+        ],
+        [
+          "Depth Order",
+          "MENU"
+        ]
+      ],
+      "outputs": [
+        [
+          "Grease Pencil",
+          "GEOMETRY"
+        ]
+      ]
+    },
+    "GeometryNodeSetGreasePencilSoftness": {
+      "inputs": [
+        [
+          "Grease Pencil",
+          "GEOMETRY"
+        ],
+        [
+          "Selection",
+          "BOOLEAN"
+        ],
+        [
+          "Softness",
+          "VALUE"
+        ]
+      ],
+      "outputs": [
+        [
+          "Grease Pencil",
+          "GEOMETRY"
+        ]
+      ]
+    },
+    "GeometryNodeSetGridBackground": {
+      "inputs": [
+        [
+          "Grid",
+          "VALUE"
+        ],
+        [
+          "Background",
+          "VALUE"
+        ],
+        [
+          "Update Inactive",
+          "BOOLEAN"
+        ]
+      ],
+      "outputs": [
+        [
+          "Grid",
+          "VALUE"
+        ]
+      ]
+    },
+    "GeometryNodeSetGridTransform": {
+      "inputs": [
+        [
+          "Grid",
+          "VALUE"
+        ],
+        [
+          "Transform",
+          "MATRIX"
+        ]
+      ],
+      "outputs": [
+        [
+          "Is Valid",
+          "BOOLEAN"
+        ],
+        [
+          "Grid",
+          "VALUE"
+        ]
+      ]
+    },
+    "GeometryNodeSetID": {
+      "inputs": [
+        [
+          "Geometry",
+          "GEOMETRY"
+        ],
+        [
+          "Selection",
+          "BOOLEAN"
+        ],
+        [
+          "ID",
+          "INT"
+        ]
+      ],
+      "outputs": [
+        [
+          "Geometry",
+          "GEOMETRY"
+        ]
+      ]
+    },
+    "GeometryNodeSetInstanceTransform": {
+      "inputs": [
+        [
+          "Instances",
+          "GEOMETRY"
+        ],
+        [
+          "Selection",
+          "BOOLEAN"
+        ],
+        [
+          "Transform",
+          "MATRIX"
+        ]
+      ],
+      "outputs": [
+        [
+          "Instances",
+          "GEOMETRY"
+        ]
+      ]
+    },
+    "GeometryNodeSetMaterial": {
+      "inputs": [
+        [
+          "Geometry",
+          "GEOMETRY"
+        ],
+        [
+          "Selection",
+          "BOOLEAN"
+        ],
+        [
+          "Material",
+          "MATERIAL"
+        ]
+      ],
+      "outputs": [
+        [
+          "Geometry",
+          "GEOMETRY"
+        ]
+      ]
+    },
+    "GeometryNodeSetMaterialIndex": {
+      "inputs": [
+        [
+          "Geometry",
+          "GEOMETRY"
+        ],
+        [
+          "Selection",
+          "BOOLEAN"
+        ],
+        [
+          "Material Index",
+          "INT"
+        ]
+      ],
+      "outputs": [
+        [
+          "Geometry",
+          "GEOMETRY"
+        ]
+      ]
+    },
+    "GeometryNodeSetMeshNormal": {
+      "inputs": [
+        [
+          "Mesh",
+          "GEOMETRY"
+        ],
+        [
+          "Remove Custom",
+          "BOOLEAN"
+        ],
+        [
+          "Edge Sharpness",
+          "BOOLEAN"
+        ],
+        [
+          "Face Sharpness",
+          "BOOLEAN"
+        ]
+      ],
+      "outputs": [
+        [
+          "Mesh",
+          "GEOMETRY"
+        ]
+      ]
+    },
+    "GeometryNodeSetNURBSOrder": {
+      "inputs": [
+        [
+          "Curves",
+          "GEOMETRY"
+        ],
+        [
+          "Selection",
+          "BOOLEAN"
+        ],
+        [
+          "Order",
+          "INT"
+        ]
+      ],
+      "outputs": [
+        [
+          "Curves",
+          "GEOMETRY"
+        ]
+      ]
+    },
+    "GeometryNodeSetNURBSWeight": {
+      "inputs": [
+        [
+          "Curves",
+          "GEOMETRY"
+        ],
+        [
+          "Selection",
+          "BOOLEAN"
+        ],
+        [
+          "Weight",
+          "VALUE"
+        ]
+      ],
+      "outputs": [
+        [
+          "Curves",
+          "GEOMETRY"
+        ]
+      ]
+    },
+    "GeometryNodeSetPointRadius": {
+      "inputs": [
+        [
+          "Points",
+          "GEOMETRY"
+        ],
+        [
+          "Selection",
+          "BOOLEAN"
+        ],
+        [
+          "Radius",
+          "VALUE"
+        ]
+      ],
+      "outputs": [
+        [
+          "Points",
+          "GEOMETRY"
+        ]
+      ]
+    },
+    "GeometryNodeSetPosition": {
+      "inputs": [
+        [
+          "Geometry",
+          "GEOMETRY"
+        ],
+        [
+          "Selection",
+          "BOOLEAN"
+        ],
+        [
+          "Position",
+          "VECTOR"
+        ],
+        [
+          "Offset",
+          "VECTOR"
+        ]
+      ],
+      "outputs": [
+        [
+          "Geometry",
+          "GEOMETRY"
+        ]
+      ]
+    },
+    "GeometryNodeSetShadeSmooth": {
+      "inputs": [
+        [
+          "Mesh",
+          "GEOMETRY"
+        ],
+        [
+          "Selection",
+          "BOOLEAN"
+        ],
+        [
+          "Shade Smooth",
+          "BOOLEAN"
+        ]
+      ],
+      "outputs": [
+        [
+          "Mesh",
+          "GEOMETRY"
+        ]
+      ]
+    },
+    "GeometryNodeSetSplineCyclic": {
+      "inputs": [
+        [
+          "Curve",
+          "GEOMETRY"
+        ],
+        [
+          "Selection",
+          "BOOLEAN"
+        ],
+        [
+          "Cyclic",
+          "BOOLEAN"
+        ]
+      ],
+      "outputs": [
+        [
+          "Curve",
+          "GEOMETRY"
+        ]
+      ]
+    },
+    "GeometryNodeSetSplineResolution": {
+      "inputs": [
+        [
+          "Curve",
+          "GEOMETRY"
+        ],
+        [
+          "Selection",
+          "BOOLEAN"
+        ],
+        [
+          "Resolution",
+          "INT"
+        ]
+      ],
+      "outputs": [
+        [
+          "Curve",
+          "GEOMETRY"
+        ]
+      ]
+    },
+    "GeometryNodeSimulationInput": {
+      "inputs": [],
+      "outputs": [
+        [
+          "Delta Time",
+          "VALUE"
+        ]
+      ]
+    },
+    "GeometryNodeSimulationOutput": {
+      "inputs": [
+        [
+          "Skip",
+          "BOOLEAN"
+        ],
+        [
+          "Geometry",
+          "GEOMETRY"
+        ],
+        [
+          "",
+          "CUSTOM"
+        ]
+      ],
+      "outputs": [
+        [
+          "Geometry",
+          "GEOMETRY"
+        ],
+        [
+          "",
+          "CUSTOM"
+        ]
+      ]
+    },
+    "GeometryNodeSortElements": {
+      "inputs": [
+        [
+          "Geometry",
+          "GEOMETRY"
+        ],
+        [
+          "Selection",
+          "BOOLEAN"
+        ],
+        [
+          "Group ID",
+          "INT"
+        ],
+        [
+          "Sort Weight",
+          "VALUE"
+        ]
+      ],
+      "outputs": [
+        [
+          "Geometry",
+          "GEOMETRY"
+        ]
+      ]
+    },
+    "GeometryNodeSortList": {
+      "inputs": [
+        [
+          "List",
+          "VALUE"
+        ],
+        [
+          "Selection",
+          "BOOLEAN"
+        ],
+        [
+          "Group ID",
+          "INT"
+        ],
+        [
+          "Sort Weight",
+          "VALUE"
+        ]
+      ],
+      "outputs": [
+        [
+          "List",
+          "VALUE"
+        ]
+      ]
+    },
+    "GeometryNodeSplineLength": {
+      "inputs": [],
+      "outputs": [
+        [
+          "Length",
+          "VALUE"
+        ],
+        [
+          "Point Count",
+          "INT"
+        ]
+      ]
+    },
+    "GeometryNodeSplineParameter": {
+      "inputs": [],
+      "outputs": [
+        [
+          "Factor",
+          "VALUE"
+        ],
+        [
+          "Length",
+          "VALUE"
+        ],
+        [
+          "Index",
+          "INT"
+        ]
+      ]
+    },
+    "GeometryNodeSplitEdges": {
+      "inputs": [
+        [
+          "Mesh",
+          "GEOMETRY"
+        ],
+        [
+          "Selection",
+          "BOOLEAN"
+        ]
+      ],
+      "outputs": [
+        [
+          "Mesh",
+          "GEOMETRY"
+        ]
+      ]
+    },
+    "GeometryNodeSplitToInstances": {
+      "inputs": [
+        [
+          "Geometry",
+          "GEOMETRY"
+        ],
+        [
+          "Selection",
+          "BOOLEAN"
+        ],
+        [
+          "Group ID",
+          "INT"
+        ]
+      ],
+      "outputs": [
+        [
+          "Instances",
+          "GEOMETRY"
+        ],
+        [
+          "Group ID",
+          "INT"
+        ]
+      ]
+    },
+    "GeometryNodeStoreNamedAttribute": {
+      "inputs": [
+        [
+          "Geometry",
+          "GEOMETRY"
+        ],
+        [
+          "Selection",
+          "BOOLEAN"
+        ],
+        [
+          "Name",
+          "STRING"
+        ],
+        [
+          "Value",
+          "VALUE"
+        ]
+      ],
+      "outputs": [
+        [
+          "Geometry",
+          "GEOMETRY"
+        ]
+      ]
+    },
+    "GeometryNodeStoreNamedGrid": {
+      "inputs": [
+        [
+          "Volume",
+          "GEOMETRY"
+        ],
+        [
+          "Name",
+          "STRING"
+        ],
+        [
+          "Grid",
+          "VALUE"
+        ]
+      ],
+      "outputs": [
+        [
+          "Volume",
+          "GEOMETRY"
+        ]
+      ]
+    },
+    "GeometryNodeStringJoin": {
+      "inputs": [
+        [
+          "Delimiter",
+          "STRING"
+        ],
+        [
+          "Strings",
+          "STRING"
+        ]
+      ],
+      "outputs": [
+        [
+          "String",
+          "STRING"
+        ]
+      ]
+    },
+    "GeometryNodeStringToCurves": {
+      "inputs": [
+        [
+          "String",
+          "STRING"
+        ],
+        [
+          "Size",
+          "VALUE"
+        ],
+        [
+          "Font",
+          "FONT"
+        ],
+        [
+          "Align X",
+          "MENU"
+        ],
+        [
+          "Align Y",
+          "MENU"
+        ],
+        [
+          "Pivot Point",
+          "MENU"
+        ],
+        [
+          "Character Spacing",
+          "VALUE"
+        ],
+        [
+          "Word Spacing",
+          "VALUE"
+        ],
+        [
+          "Line Spacing",
+          "VALUE"
+        ],
+        [
+          "Overflow",
+          "MENU"
+        ],
+        [
+          "Text Box Width",
+          "VALUE"
+        ],
+        [
+          "Text Box Height",
+          "VALUE"
+        ]
+      ],
+      "outputs": [
+        [
+          "Curve Instances",
+          "GEOMETRY"
+        ],
+        [
+          "Remainder",
+          "STRING"
+        ],
+        [
+          "Line",
+          "INT"
+        ],
+        [
+          "Word",
+          "INT"
+        ],
+        [
+          "Pivot Point",
+          "VECTOR"
+        ]
+      ]
+    },
+    "GeometryNodeSubdivideCurve": {
+      "inputs": [
+        [
+          "Curve",
+          "GEOMETRY"
+        ],
+        [
+          "Cuts",
+          "INT"
+        ]
+      ],
+      "outputs": [
+        [
+          "Curve",
+          "GEOMETRY"
+        ]
+      ]
+    },
+    "GeometryNodeSubdivideMesh": {
+      "inputs": [
+        [
+          "Mesh",
+          "GEOMETRY"
+        ],
+        [
+          "Level",
+          "INT"
+        ]
+      ],
+      "outputs": [
+        [
+          "Mesh",
+          "GEOMETRY"
+        ]
+      ]
+    },
+    "GeometryNodeSubdivisionSurface": {
+      "inputs": [
+        [
+          "Mesh",
+          "GEOMETRY"
+        ],
+        [
+          "Level",
+          "INT"
+        ],
+        [
+          "Edge Crease",
+          "VALUE"
+        ],
+        [
+          "Vertex Crease",
+          "VALUE"
+        ],
+        [
+          "Limit Surface",
+          "BOOLEAN"
+        ],
+        [
+          "Quality",
+          "INT"
+        ],
+        [
+          "UV Smooth",
+          "MENU"
+        ],
+        [
+          "Boundary Smooth",
+          "MENU"
+        ]
+      ],
+      "outputs": [
+        [
+          "Mesh",
+          "GEOMETRY"
+        ]
+      ]
+    },
+    "GeometryNodeSwitch": {
+      "inputs": [
+        [
+          "Switch",
+          "BOOLEAN"
+        ],
+        [
+          "False",
+          "VALUE"
+        ],
+        [
+          "True",
+          "VALUE"
+        ]
+      ],
+      "outputs": [
+        [
+          "Output",
+          "VALUE"
+        ]
+      ]
+    },
+    "GeometryNodeTagFilter": {
+      "inputs": [
+        [
+          "Tag Filter",
+          "STRING"
+        ],
+        [
+          "Tags",
+          "STRING"
+        ]
+      ],
+      "outputs": [
+        [
+          "Match",
+          "BOOLEAN"
+        ]
+      ]
+    },
+    "GeometryNodeTool3DCursor": {
+      "inputs": [],
+      "outputs": [
+        [
+          "Location",
+          "VECTOR"
+        ],
+        [
+          "Rotation",
+          "ROTATION"
+        ]
+      ]
+    },
+    "GeometryNodeToolActiveElement": {
+      "inputs": [],
+      "outputs": [
+        [
+          "Index",
+          "INT"
+        ],
+        [
+          "Exists",
+          "BOOLEAN"
+        ]
+      ]
+    },
+    "GeometryNodeToolFaceSet": {
+      "inputs": [],
+      "outputs": [
+        [
+          "Face Set",
+          "INT"
+        ],
+        [
+          "Exists",
+          "BOOLEAN"
+        ]
+      ]
+    },
+    "GeometryNodeToolMousePosition": {
+      "inputs": [],
+      "outputs": [
+        [
+          "Mouse X",
+          "INT"
+        ],
+        [
+          "Mouse Y",
+          "INT"
+        ],
+        [
+          "Region Width",
+          "INT"
+        ],
+        [
+          "Region Height",
+          "INT"
+        ]
+      ]
+    },
+    "GeometryNodeToolSelection": {
+      "inputs": [],
+      "outputs": [
+        [
+          "Boolean",
+          "BOOLEAN"
+        ],
+        [
+          "Float",
+          "VALUE"
+        ]
+      ]
+    },
+    "GeometryNodeToolSetFaceSet": {
+      "inputs": [
+        [
+          "Mesh",
+          "GEOMETRY"
+        ],
+        [
+          "Selection",
+          "BOOLEAN"
+        ],
+        [
+          "Face Set",
+          "INT"
+        ]
+      ],
+      "outputs": [
+        [
+          "Mesh",
+          "GEOMETRY"
+        ]
+      ]
+    },
+    "GeometryNodeToolSetSelection": {
+      "inputs": [
+        [
+          "Geometry",
+          "GEOMETRY"
+        ],
+        [
+          "Selection",
+          "BOOLEAN"
+        ]
+      ],
+      "outputs": [
+        [
+          "Geometry",
+          "GEOMETRY"
+        ]
+      ]
+    },
+    "GeometryNodeTransferAttributes": {
+      "inputs": [
+        [
+          "Target",
+          "GEOMETRY"
+        ],
+        [
+          "Target Point ID",
+          "INT"
+        ],
+        [
+          "Target Edge ID",
+          "INT"
+        ],
+        [
+          "Target Face ID",
+          "INT"
+        ],
+        [
+          "Target Corner ID",
+          "INT"
+        ],
+        [
+          "Target Curve ID",
+          "INT"
+        ],
+        [
+          "Target Instance ID",
+          "INT"
+        ],
+        [
+          "Source",
+          "GEOMETRY"
+        ],
+        [
+          "Source Point ID",
+          "INT"
+        ],
+        [
+          "Source Edge ID",
+          "INT"
+        ],
+        [
+          "Source Face ID",
+          "INT"
+        ],
+        [
+          "Source Corner ID",
+          "INT"
+        ],
+        [
+          "Source Curve ID",
+          "INT"
+        ],
+        [
+          "Source Instance ID",
+          "INT"
+        ],
+        [
+          "Pattern Mode",
+          "MENU"
+        ],
+        [
+          "Attribute Names",
+          "STRING"
+        ],
+        [
+          "Exclude Names",
+          "BOOLEAN"
+        ]
+      ],
+      "outputs": [
+        [
+          "Target",
+          "GEOMETRY"
+        ],
+        [
+          "Transferred Names",
+          "STRING"
+        ]
+      ]
+    },
+    "GeometryNodeTransform": {
+      "inputs": [
+        [
+          "Geometry",
+          "GEOMETRY"
+        ],
+        [
+          "Mode",
+          "MENU"
+        ],
+        [
+          "Translation",
+          "VECTOR"
+        ],
+        [
+          "Rotation",
+          "ROTATION"
+        ],
+        [
+          "Scale",
+          "VECTOR"
+        ],
+        [
+          "Transform",
+          "MATRIX"
+        ]
+      ],
+      "outputs": [
+        [
+          "Geometry",
+          "GEOMETRY"
+        ]
+      ]
+    },
+    "GeometryNodeTranslateInstances": {
+      "inputs": [
+        [
+          "Instances",
+          "GEOMETRY"
+        ],
+        [
+          "Selection",
+          "BOOLEAN"
+        ],
+        [
+          "Translation",
+          "VECTOR"
+        ],
+        [
+          "Local Space",
+          "BOOLEAN"
+        ]
+      ],
+      "outputs": [
+        [
+          "Instances",
+          "GEOMETRY"
+        ]
+      ]
+    },
+    "GeometryNodeTriangulate": {
+      "inputs": [
+        [
+          "Mesh",
+          "GEOMETRY"
+        ],
+        [
+          "Selection",
+          "BOOLEAN"
+        ],
+        [
+          "Quad Method",
+          "MENU"
+        ],
+        [
+          "N-gon Method",
+          "MENU"
+        ]
+      ],
+      "outputs": [
+        [
+          "Mesh",
+          "GEOMETRY"
+        ]
+      ]
+    },
+    "GeometryNodeTrimCurve": {
+      "inputs": [
+        [
+          "Curve",
+          "GEOMETRY"
+        ],
+        [
+          "Selection",
+          "BOOLEAN"
+        ],
+        [
+          "Start",
+          "VALUE"
+        ],
+        [
+          "End",
+          "VALUE"
+        ],
+        [
+          "Start",
+          "VALUE"
+        ],
+        [
+          "End",
+          "VALUE"
+        ]
+      ],
+      "outputs": [
+        [
+          "Curve",
+          "GEOMETRY"
+        ]
+      ]
+    },
+    "GeometryNodeUVPackIslands": {
+      "inputs": [
+        [
+          "UV",
+          "VECTOR"
+        ],
+        [
+          "Selection",
+          "BOOLEAN"
+        ],
+        [
+          "Margin",
+          "VALUE"
+        ],
+        [
+          "Rotate",
+          "BOOLEAN"
+        ],
+        [
+          "Method",
+          "MENU"
+        ],
+        [
+          "Bottom Left",
+          "VECTOR"
+        ],
+        [
+          "Top Right",
+          "VECTOR"
+        ]
+      ],
+      "outputs": [
+        [
+          "UV",
+          "VECTOR"
+        ]
+      ]
+    },
+    "GeometryNodeUVTangent": {
+      "inputs": [
+        [
+          "Method",
+          "MENU"
+        ],
+        [
+          "UV",
+          "VECTOR"
+        ]
+      ],
+      "outputs": [
+        [
+          "Tangent",
+          "VECTOR"
+        ]
+      ]
+    },
+    "GeometryNodeUVUnwrap": {
+      "inputs": [
+        [
+          "Selection",
+          "BOOLEAN"
+        ],
+        [
+          "Seam",
+          "BOOLEAN"
+        ],
+        [
+          "Margin",
+          "VALUE"
+        ],
+        [
+          "Fill Holes",
+          "BOOLEAN"
+        ],
+        [
+          "Method",
+          "MENU"
+        ],
+        [
+          "Iterations",
+          "INT"
+        ],
+        [
+          "No Flip",
+          "BOOLEAN"
+        ]
+      ],
+      "outputs": [
+        [
+          "UV",
+          "VECTOR"
+        ]
+      ]
+    },
+    "GeometryNodeVertexOfCorner": {
+      "inputs": [
+        [
+          "Corner Index",
+          "INT"
+        ]
+      ],
+      "outputs": [
+        [
+          "Vertex Index",
+          "INT"
+        ]
+      ]
+    },
+    "GeometryNodeViewer": {
+      "inputs": [
+        [
+          "",
+          "CUSTOM"
+        ]
+      ],
+      "outputs": []
+    },
+    "GeometryNodeViewportTransform": {
+      "inputs": [],
+      "outputs": [
+        [
+          "Projection",
+          "MATRIX"
+        ],
+        [
+          "View",
+          "MATRIX"
+        ],
+        [
+          "Is Orthographic",
+          "BOOLEAN"
+        ]
+      ]
+    },
+    "GeometryNodeVolumeCube": {
+      "inputs": [
+        [
+          "Density",
+          "VALUE"
+        ],
+        [
+          "Background",
+          "VALUE"
+        ],
+        [
+          "Min",
+          "VECTOR"
+        ],
+        [
+          "Max",
+          "VECTOR"
+        ],
+        [
+          "Resolution X",
+          "INT"
+        ],
+        [
+          "Resolution Y",
+          "INT"
+        ],
+        [
+          "Resolution Z",
+          "INT"
+        ]
+      ],
+      "outputs": [
+        [
+          "Volume",
+          "GEOMETRY"
+        ]
+      ]
+    },
+    "GeometryNodeVolumeToMesh": {
+      "inputs": [
+        [
+          "Volume",
+          "GEOMETRY"
+        ],
+        [
+          "Resolution Mode",
+          "MENU"
+        ],
+        [
+          "Voxel Size",
+          "VALUE"
+        ],
+        [
+          "Voxel Amount",
+          "VALUE"
+        ],
+        [
+          "Threshold",
+          "VALUE"
+        ],
+        [
+          "Adaptivity",
+          "VALUE"
+        ]
+      ],
+      "outputs": [
+        [
+          "Mesh",
+          "GEOMETRY"
+        ]
+      ]
+    },
+    "GeometryNodeWarning": {
+      "inputs": [
+        [
+          "Show",
+          "BOOLEAN"
+        ],
+        [
+          "Message",
+          "STRING"
+        ]
+      ],
+      "outputs": [
+        [
+          "Show",
+          "BOOLEAN"
+        ]
+      ]
+    },
+    "GeometryNodeXPBDSolver": {
+      "inputs": [
+        [
+          "World",
+          "BUNDLE"
+        ],
+        [
+          "Delta Time",
+          "VALUE"
+        ],
+        [
+          "Filter",
+          "STRING"
+        ],
+        [
+          "Simulation to World",
+          "MATRIX"
+        ],
+        [
+          "Substeps",
+          "INT"
+        ],
+        [
+          "Constraint Iterations",
+          "INT"
+        ],
+        [
+          "Solver Path",
+          "STRING"
+        ],
+        [
+          "Begin",
+          "VALUE"
+        ],
+        [
+          "End",
+          "VALUE"
+        ]
+      ],
+      "outputs": [
+        [
+          "World",
+          "BUNDLE"
+        ]
+      ]
+    },
+    "NodeFrame": {
+      "inputs": [],
+      "outputs": []
+    },
+    "NodeGroupInput": {
+      "inputs": [],
+      "outputs": [
+        [
+          "",
+          "CUSTOM"
+        ]
+      ]
+    },
+    "NodeGroupOutput": {
+      "inputs": [
+        [
+          "",
+          "CUSTOM"
+        ]
+      ],
+      "outputs": []
+    },
+    "NodeReroute": {
+      "inputs": [
+        [
+          "Input",
+          "RGBA"
+        ]
+      ],
+      "outputs": [
+        [
+          "Output",
+          "RGBA"
+        ]
+      ]
+    },
+    "ShaderNodeBlackbody": {
+      "inputs": [
+        [
+          "Temperature",
+          "VALUE"
+        ]
+      ],
+      "outputs": [
+        [
+          "Color",
+          "RGBA"
+        ]
+      ]
+    },
+    "ShaderNodeClamp": {
+      "inputs": [
+        [
+          "Value",
+          "VALUE"
+        ],
+        [
+          "Min",
+          "VALUE"
+        ],
+        [
+          "Max",
+          "VALUE"
+        ]
+      ],
+      "outputs": [
+        [
+          "Result",
+          "VALUE"
+        ]
+      ]
+    },
+    "ShaderNodeCombineXYZ": {
+      "inputs": [
+        [
+          "X",
+          "VALUE"
+        ],
+        [
+          "Y",
+          "VALUE"
+        ],
+        [
+          "Z",
+          "VALUE"
+        ]
+      ],
+      "outputs": [
+        [
+          "Vector",
+          "VECTOR"
+        ]
+      ]
+    },
+    "ShaderNodeFloatCurve": {
+      "inputs": [
+        [
+          "Factor",
+          "VALUE"
+        ],
+        [
+          "Value",
+          "VALUE"
+        ]
+      ],
+      "outputs": [
+        [
+          "Value",
+          "VALUE"
+        ]
+      ]
+    },
+    "ShaderNodeGamma": {
+      "inputs": [
+        [
+          "Color",
+          "RGBA"
+        ],
+        [
+          "Gamma",
+          "VALUE"
+        ]
+      ],
+      "outputs": [
+        [
+          "Color",
+          "RGBA"
+        ]
+      ]
+    },
+    "ShaderNodeMapRange": {
+      "inputs": [
+        [
+          "Value",
+          "VALUE"
+        ],
+        [
+          "From Min",
+          "VALUE"
+        ],
+        [
+          "From Max",
+          "VALUE"
+        ],
+        [
+          "To Min",
+          "VALUE"
+        ],
+        [
+          "To Max",
+          "VALUE"
+        ],
+        [
+          "Steps",
+          "VALUE"
+        ],
+        [
+          "Vector",
+          "VECTOR"
+        ],
+        [
+          "From Min",
+          "VECTOR"
+        ],
+        [
+          "From Max",
+          "VECTOR"
+        ],
+        [
+          "To Min",
+          "VECTOR"
+        ],
+        [
+          "To Max",
+          "VECTOR"
+        ],
+        [
+          "Steps",
+          "VECTOR"
+        ]
+      ],
+      "outputs": [
+        [
+          "Result",
+          "VALUE"
+        ],
+        [
+          "Vector",
+          "VECTOR"
+        ]
+      ]
+    },
+    "ShaderNodeMath": {
+      "inputs": [
+        [
+          "Value",
+          "VALUE"
+        ],
+        [
+          "Value",
+          "VALUE"
+        ],
+        [
+          "Value",
+          "VALUE"
+        ]
+      ],
+      "outputs": [
+        [
+          "Value",
+          "VALUE"
+        ]
+      ]
+    },
+    "ShaderNodeMix": {
+      "inputs": [
+        [
+          "Factor",
+          "VALUE"
+        ],
+        [
+          "Factor",
+          "VECTOR"
+        ],
+        [
+          "A",
+          "VALUE"
+        ],
+        [
+          "B",
+          "VALUE"
+        ],
+        [
+          "A",
+          "VECTOR"
+        ],
+        [
+          "B",
+          "VECTOR"
+        ],
+        [
+          "A",
+          "RGBA"
+        ],
+        [
+          "B",
+          "RGBA"
+        ],
+        [
+          "A",
+          "ROTATION"
+        ],
+        [
+          "B",
+          "ROTATION"
+        ]
+      ],
+      "outputs": [
+        [
+          "Result",
+          "VALUE"
+        ],
+        [
+          "Result",
+          "VECTOR"
+        ],
+        [
+          "Result",
+          "RGBA"
+        ],
+        [
+          "Result",
+          "ROTATION"
+        ]
+      ]
+    },
+    "ShaderNodeMixRGB": {
+      "inputs": [
+        [
+          "Factor",
+          "VALUE"
+        ],
+        [
+          "Color1",
+          "RGBA"
+        ],
+        [
+          "Color2",
+          "RGBA"
+        ]
+      ],
+      "outputs": [
+        [
+          "Color",
+          "RGBA"
+        ]
+      ]
+    },
+    "ShaderNodeRGBCurve": {
+      "inputs": [
+        [
+          "Factor",
+          "VALUE"
+        ],
+        [
+          "Color",
+          "RGBA"
+        ]
+      ],
+      "outputs": [
+        [
+          "Color",
+          "RGBA"
+        ]
+      ]
+    },
+    "ShaderNodeRadialTiling": {
+      "inputs": [
+        [
+          "Vector",
+          "VECTOR"
+        ],
+        [
+          "Sides",
+          "VALUE"
+        ],
+        [
+          "Roundness",
+          "VALUE"
+        ]
+      ],
+      "outputs": [
+        [
+          "Segment Coordinates",
+          "VECTOR"
+        ],
+        [
+          "Segment ID",
+          "VALUE"
+        ],
+        [
+          "Segment Width",
+          "VALUE"
+        ],
+        [
+          "Segment Rotation",
+          "VALUE"
+        ]
+      ]
+    },
+    "ShaderNodeSeparateXYZ": {
+      "inputs": [
+        [
+          "Vector",
+          "VECTOR"
+        ]
+      ],
+      "outputs": [
+        [
+          "X",
+          "VALUE"
+        ],
+        [
+          "Y",
+          "VALUE"
+        ],
+        [
+          "Z",
+          "VALUE"
+        ]
+      ]
+    },
+    "ShaderNodeTexBrick": {
+      "inputs": [
+        [
+          "Vector",
+          "VECTOR"
+        ],
+        [
+          "Color1",
+          "RGBA"
+        ],
+        [
+          "Color2",
+          "RGBA"
+        ],
+        [
+          "Mortar",
+          "RGBA"
+        ],
+        [
+          "Scale",
+          "VALUE"
+        ],
+        [
+          "Mortar Size",
+          "VALUE"
+        ],
+        [
+          "Mortar Smooth",
+          "VALUE"
+        ],
+        [
+          "Bias",
+          "VALUE"
+        ],
+        [
+          "Brick Width",
+          "VALUE"
+        ],
+        [
+          "Row Height",
+          "VALUE"
+        ]
+      ],
+      "outputs": [
+        [
+          "Color",
+          "RGBA"
+        ],
+        [
+          "Factor",
+          "VALUE"
+        ]
+      ]
+    },
+    "ShaderNodeTexChecker": {
+      "inputs": [
+        [
+          "Vector",
+          "VECTOR"
+        ],
+        [
+          "Color1",
+          "RGBA"
+        ],
+        [
+          "Color2",
+          "RGBA"
+        ],
+        [
+          "Scale",
+          "VALUE"
+        ]
+      ],
+      "outputs": [
+        [
+          "Color",
+          "RGBA"
+        ],
+        [
+          "Factor",
+          "VALUE"
+        ]
+      ]
+    },
+    "ShaderNodeTexGabor": {
+      "inputs": [
+        [
+          "Vector",
+          "VECTOR"
+        ],
+        [
+          "Scale",
+          "VALUE"
+        ],
+        [
+          "Frequency",
+          "VALUE"
+        ],
+        [
+          "Anisotropy",
+          "VALUE"
+        ],
+        [
+          "Orientation",
+          "VALUE"
+        ],
+        [
+          "Orientation",
+          "VECTOR"
+        ]
+      ],
+      "outputs": [
+        [
+          "Value",
+          "VALUE"
+        ],
+        [
+          "Phase",
+          "VALUE"
+        ],
+        [
+          "Intensity",
+          "VALUE"
+        ]
+      ]
+    },
+    "ShaderNodeTexGradient": {
+      "inputs": [
+        [
+          "Vector",
+          "VECTOR"
+        ]
+      ],
+      "outputs": [
+        [
+          "Color",
+          "RGBA"
+        ],
+        [
+          "Factor",
+          "VALUE"
+        ]
+      ]
+    },
+    "ShaderNodeTexMagic": {
+      "inputs": [
+        [
+          "Vector",
+          "VECTOR"
+        ],
+        [
+          "Scale",
+          "VALUE"
+        ],
+        [
+          "Distortion",
+          "VALUE"
+        ]
+      ],
+      "outputs": [
+        [
+          "Color",
+          "RGBA"
+        ],
+        [
+          "Factor",
+          "VALUE"
+        ]
+      ]
+    },
+    "ShaderNodeTexNoise": {
+      "inputs": [
+        [
+          "Vector",
+          "VECTOR"
+        ],
+        [
+          "W",
+          "VALUE"
+        ],
+        [
+          "Scale",
+          "VALUE"
+        ],
+        [
+          "Detail",
+          "VALUE"
+        ],
+        [
+          "Roughness",
+          "VALUE"
+        ],
+        [
+          "Lacunarity",
+          "VALUE"
+        ],
+        [
+          "Offset",
+          "VALUE"
+        ],
+        [
+          "Gain",
+          "VALUE"
+        ],
+        [
+          "Distortion",
+          "VALUE"
+        ]
+      ],
+      "outputs": [
+        [
+          "Factor",
+          "VALUE"
+        ],
+        [
+          "Color",
+          "RGBA"
+        ]
+      ]
+    },
+    "ShaderNodeTexVoronoi": {
+      "inputs": [
+        [
+          "Vector",
+          "VECTOR"
+        ],
+        [
+          "W",
+          "VALUE"
+        ],
+        [
+          "Scale",
+          "VALUE"
+        ],
+        [
+          "Detail",
+          "VALUE"
+        ],
+        [
+          "Roughness",
+          "VALUE"
+        ],
+        [
+          "Lacunarity",
+          "VALUE"
+        ],
+        [
+          "Smoothness",
+          "VALUE"
+        ],
+        [
+          "Exponent",
+          "VALUE"
+        ],
+        [
+          "Randomness",
+          "VALUE"
+        ]
+      ],
+      "outputs": [
+        [
+          "Distance",
+          "VALUE"
+        ],
+        [
+          "Color",
+          "RGBA"
+        ],
+        [
+          "Position",
+          "VECTOR"
+        ],
+        [
+          "W",
+          "VALUE"
+        ],
+        [
+          "Radius",
+          "VALUE"
+        ]
+      ]
+    },
+    "ShaderNodeTexWave": {
+      "inputs": [
+        [
+          "Vector",
+          "VECTOR"
+        ],
+        [
+          "Scale",
+          "VALUE"
+        ],
+        [
+          "Distortion",
+          "VALUE"
+        ],
+        [
+          "Detail",
+          "VALUE"
+        ],
+        [
+          "Detail Scale",
+          "VALUE"
+        ],
+        [
+          "Detail Roughness",
+          "VALUE"
+        ],
+        [
+          "Phase Offset",
+          "VALUE"
+        ]
+      ],
+      "outputs": [
+        [
+          "Color",
+          "RGBA"
+        ],
+        [
+          "Factor",
+          "VALUE"
+        ]
+      ]
+    },
+    "ShaderNodeTexWhiteNoise": {
+      "inputs": [
+        [
+          "Vector",
+          "VECTOR"
+        ],
+        [
+          "W",
+          "VALUE"
+        ]
+      ],
+      "outputs": [
+        [
+          "Value",
+          "VALUE"
+        ],
+        [
+          "Color",
+          "RGBA"
+        ]
+      ]
+    },
+    "ShaderNodeValToRGB": {
+      "inputs": [
+        [
+          "Factor",
+          "VALUE"
+        ]
+      ],
+      "outputs": [
+        [
+          "Color",
+          "RGBA"
+        ],
+        [
+          "Alpha",
+          "VALUE"
+        ]
+      ]
+    },
+    "ShaderNodeValue": {
+      "inputs": [],
+      "outputs": [
+        [
+          "Value",
+          "VALUE"
+        ]
+      ]
+    },
+    "ShaderNodeVectorCurve": {
+      "inputs": [
+        [
+          "Factor",
+          "VALUE"
+        ],
+        [
+          "Vector",
+          "VECTOR"
+        ]
+      ],
+      "outputs": [
+        [
+          "Vector",
+          "VECTOR"
+        ]
+      ]
+    },
+    "ShaderNodeVectorMath": {
+      "inputs": [
+        [
+          "Vector",
+          "VECTOR"
+        ],
+        [
+          "Vector",
+          "VECTOR"
+        ],
+        [
+          "Vector",
+          "VECTOR"
+        ],
+        [
+          "Scale",
+          "VALUE"
+        ]
+      ],
+      "outputs": [
+        [
+          "Vector",
+          "VECTOR"
+        ],
+        [
+          "Value",
+          "VALUE"
+        ]
+      ]
+    },
+    "ShaderNodeVectorRotate": {
+      "inputs": [
+        [
+          "Vector",
+          "VECTOR"
+        ],
+        [
+          "Center",
+          "VECTOR"
+        ],
+        [
+          "Axis",
+          "VECTOR"
+        ],
+        [
+          "Angle",
+          "VALUE"
+        ],
+        [
+          "Rotation",
+          "VECTOR"
+        ]
+      ],
+      "outputs": [
+        [
+          "Vector",
+          "VECTOR"
+        ]
+      ]
+    }
+  }
+}

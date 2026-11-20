@@ -35,6 +35,10 @@ import triton.language as tl
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 PARENT_SCRIPTS = SCRIPT_DIR.parent
+DEFAULT_MODEL_DIR = Path(os.environ.get("MODEL_DIR", "/home/nos/models"))
+DEFAULT_BASE_GGUF = Path(
+    os.environ.get("BASE_GGUF", str(DEFAULT_MODEL_DIR / "Ternary-Bonsai-2-27B-PTQ1_0.gguf"))
+)
 if str(PARENT_SCRIPTS) not in sys.path:
     sys.path.insert(0, str(PARENT_SCRIPTS))
 
@@ -649,7 +653,7 @@ class BonsaiPTQStudent(nn.Module):
 
     def __init__(
         self,
-        gguf_path: str | Path = "/home/nos/models/Ternary-Bonsai-2-27B-PTQ1_0.gguf",
+        gguf_path: str | Path = DEFAULT_BASE_GGUF,
         device: torch.device | None = None,
         start_grad_layer: int = 32,
         target_modules: tuple[str, ...] = (
@@ -1093,7 +1097,10 @@ def verify_equivalence(
 ) -> None:
     """Compare logits of BonsaiPTQStudent directly against live Bonsai-demo llama-server."""
     _check_llama_swap_free()
-    llama_bin = Path("/run/media/nos/games/inference_engines/Bonsai-demo/bin/cuda/llama-server")
+    llama_bin = Path(os.environ.get(
+        "LLAMA_SERVER_BIN",
+        "/run/media/nos/games/inference_engines/Bonsai-demo/bin/cuda/llama-server",
+    ))
     port = 18089
     cmd = [
         str(llama_bin),
@@ -1187,7 +1194,7 @@ def verify_equivalence(
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--gguf", type=Path, default=Path("/home/nos/models/Ternary-Bonsai-2-27B-PTQ1_0.gguf"))
+    parser.add_argument("--gguf", type=Path, default=DEFAULT_BASE_GGUF)
     parser.add_argument("--test-triton", action="store_true")
     parser.add_argument("--verify-equivalence", action="store_true")
     args = parser.parse_args()

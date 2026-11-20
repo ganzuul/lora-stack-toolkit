@@ -39,7 +39,10 @@ import bonsai_ptq_model as bpm  # noqa: E402
 import lora_gguf_common as lgc  # noqa: E402
 
 OPTIMIZE_LORA_PY = PARENT_SCRIPTS / "optimize_lora.py"
-DEFAULT_BASE_GGUF = Path("/home/nos/models/Ternary-Bonsai-2-27B-PTQ1_0.gguf")
+DEFAULT_MODEL_DIR = Path(os.environ.get("MODEL_DIR", "/home/nos/models"))
+DEFAULT_BASE_GGUF = Path(
+    os.environ.get("BASE_GGUF", str(DEFAULT_MODEL_DIR / "Ternary-Bonsai-2-27B-PTQ1_0.gguf"))
+)
 
 
 def load_qwen35_tokenizer() -> Tokenizer:
@@ -481,7 +484,11 @@ def main() -> int:
     parser.add_argument("--gguf", type=Path, default=DEFAULT_BASE_GGUF)
     parser.add_argument("--base-hf-ref", default="Qwen/Qwen3.8-27B")
     parser.add_argument("--peft-out", type=Path, default=SCRIPT_DIR / "work" / "peft_warmup")
-    parser.add_argument("--gguf-out", type=Path, default=Path("/home/nos/models/Bonsai-2-27B-blender-warmup-Q8_0.gguf"))
+    parser.add_argument(
+        "--gguf-out",
+        type=Path,
+        default=DEFAULT_MODEL_DIR / "Bonsai-2-27B-blender-warmup-Q8_0.gguf",
+    )
     parser.add_argument("--init-peft", type=Path, default=None)
     parser.add_argument("--start-layer", type=int, default=32)
     parser.add_argument("--rank", type=int, default=16)

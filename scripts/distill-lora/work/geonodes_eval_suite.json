@@ -1,0 +1,26 @@
+[
+  {
+    "id": "eval_gn_01_globular_cactus",
+    "prompt": "Build a ribbed globular barrel cactus with radial spine ridges on a small terracotta pot base procedurally.\nWrite a clean, standalone Blender 5.4 Python (`bpy`) script using Geometry Nodes (`GeometryNodeTree` with `ng.interface.new_socket`, `ng.nodes.new`, `ng.links.new`, and `NodeGroupOutput`) to build this procedural object from scratch, attach a `NODES` modifier or apply cleanly while keeping the node group in `bpy.data.node_groups`, assign `ShaderNodeBsdfPrincipled` materials, add a SUN light, active CAMERA, Cycles (64 samples), and save `/workspace/exports/final.blend`."
+  },
+  {
+    "id": "eval_gn_02_apple",
+    "prompt": "Build an organic sculpted apple fruit body with subtle top/bottom dimples and a short curved stem swept along a Bezier spline.\nWrite a clean, standalone Blender 5.4 Python (`bpy`) script using Geometry Nodes (`GeometryNodeTree` with `ng.interface.new_socket`, `ng.nodes.new`, `ng.links.new`, and `NodeGroupOutput`) to build this procedural object from scratch, attach a `NODES` modifier or apply cleanly while keeping the node group in `bpy.data.node_groups`, assign `ShaderNodeBsdfPrincipled` materials, add a SUN light, active CAMERA, Cycles (64 samples), and save `/workspace/exports/final.blend`."
+  },
+  {
+    "id": "eval_gn_03_spiral_stair",
+    "prompt": "Build a helical spiral staircase with curved cylindrical tubular handrails swept along a 3D curve profile.\nWrite a clean, standalone Blender 5.4 Python (`bpy`) script using Geometry Nodes (`GeometryNodeTree` with `ng.interface.new_socket`, `ng.nodes.new`, `ng.links.new`, and `NodeGroupOutput`) to build this procedural object from scratch, attach a `NODES` modifier or apply cleanly while keeping the node group in `bpy.data.node_groups`, assign `ShaderNodeBsdfPrincipled` materials, add a SUN light, active CAMERA, Cycles (64 samples), and save `/workspace/exports/final.blend`."
+  },
+  {
+    "id": "eval_gn_04_fluted_vase",
+    "prompt": "Build a fluted ceramic vase swept from a curved Bezier profile and modulated with radial sinusoidal ribs using Set Position.\nWrite a clean, standalone Blender 5.4 Python (`bpy`) script using Geometry Nodes (`GeometryNodeTree` with `ng.interface.new_socket`, `ng.nodes.new`, `ng.links.new`, and `NodeGroupOutput`) to build this procedural object from scratch, attach a `NODES` modifier or apply cleanly while keeping the node group in `bpy.data.node_groups`, assign `ShaderNodeBsdfPrincipled` materials, add a SUN light, active CAMERA, Cycles (64 samples), and save `/workspace/exports/final.blend`."
+  },
+  {
+    "id": "eval_gn_05_helical_spring",
+    "prompt": "Build a brushed steel helical coil spring swept cleanly using Curve Spiral, Curve Circle, and Curve to Mesh.\nWrite a clean, standalone Blender 5.4 Python (`bpy`) script using Geometry Nodes (`GeometryNodeTree` with `ng.interface.new_socket`, `ng.nodes.new`, `ng.links.new`, and `NodeGroupOutput`) to build this procedural object from scratch, attach a `NODES` modifier or apply cleanly while keeping the node group in `bpy.data.node_groups`, assign `ShaderNodeBsdfPrincipled` materials, add a SUN light, active CAMERA, Cycles (64 samples), and save `/workspace/exports/final.blend`."
+  },
+  {
+    "id": "eval_gn_06_wave_panel",
+    "prompt": "Build a procedural architectural wave-relief wall panel from a high-resolution Mesh Grid displaced smoothly via Set Position and sine math.\nWrite a clean, standalone Blender 5.4 Python (`bpy`) script using Geometry Nodes (`GeometryNodeTree` with `ng.interface.new_socket`, `ng.nodes.new`, `ng.links.new`, and `NodeGroupOutput`) to build this procedural object from scratch, attach a `NODES` modifier or apply cleanly while keeping the node group in `bpy.data.node_groups`, assign `ShaderNodeBsdfPrincipled` materials, add a SUN light, active CAMERA, Cycles (64 samples), and save `/workspace/exports/final.blend`."
+  }
+]

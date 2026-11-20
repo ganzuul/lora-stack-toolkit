@@ -1,12 +1,20 @@
 # Specialist & Core LoRA Training Recipe Specification (`Ternary-Bonsai-2-27B-PTQ1_0`)
 
-**Scope:** Reproducible engineering specification for training, assimilating, evaluating, and serving `Q8_0` LoRA adapters on `/home/nos/models/Ternary-Bonsai-2-27B-PTQ1_0.gguf` (`qwen35`, `64` blocks: `48` Gated DeltaNet + `16` Full Attention) within an **8 GiB VRAM (`RTX 2070 SUPER`, `sm_75`) / 23 GiB RAM** budget.
+**Scope:** Engineering specification for training, assimilating, evaluating,
+and serving `Q8_0` LoRA adapters on
+`Ternary-Bonsai-2-27B-PTQ1_0.gguf` (`qwen35`, `64` blocks: `48` Gated DeltaNet
++ `16` Full Attention) within an **8 GiB VRAM (`RTX 2070 SUPER`, `sm_75`) /
+23 GiB RAM** budget.
 
 The bundled training/benchmark scripts live under `scripts/distill-lora/` and
 shared GGUF/SVD utilities live under `scripts/`. For live hot-swapping on
 `qwen27b`, see the bundled Pi harness skill at
-`../.pi/agent/skills/lora-router/SKILL.md`. The separate Gemini
-`distill-lora` skill is not included in this repository.
+`../.pi/agent/skills/lora-router/SKILL.md`. The training workflow skill is
+bundled at `../.pi/agent/skills/distill-lora/SKILL.md`.
+
+The recipes' commands were recorded on one workstation and use its model and
+tool paths. Replace those external asset paths for your environment; the
+referenced project source files are included in this repository.
 
 ---
 
@@ -83,9 +91,9 @@ When compressing the orthogonal always-on core stack (`pi-lora-F16` [`256` pairs
 
 **Canonical Core Merge Command (`merge_loras.py`):**
 ```bash
-python3 -u /home/nos/scripts/merge_loras.py \
+python3 -u scripts/merge_loras.py \
   --a /home/nos/models/Qwen3.8-27B-pi-lora-F16.gguf \
-  --b /home/nos/scripts/distill-lora/work/peft_qwopus_tc_swift_r64 \
+  --b scripts/distill-lora/work/peft_qwopus_tc_swift_r64 \
   --pre-rank-b 32 --method maximin --rank 32 --outtype q8_0 \
   --device cpu --local-files-only --verify \
   --name core-pi-qwopus-maximin-r32 \
@@ -115,7 +123,7 @@ When building any API or tool-domain SME LoRA, instantiate these four layers:
 2. **Layer 2 — Canonical Boundary Contract (Flat Boilerplate Gauge & Anti-Prompt-Crutch Rule):**
    - Explicitly partition each script into **invariant boundary plumbing** (scene/resource reset, material/connection init, render/serialization target, version header) vs. **core domain synthesis**.
    - Lock every prompt, system message, SFT example, RL task, and held-out eval onto **one target version** and **one canonical boundary idiom**. Reject legacy version tags (`4.2.10` on a `5.4` binary) or unregistered helper aliases (`pbr_mat` vs `make_mat` vs `make_material`) at dataset-build time.
-   - **Never condition SFT exclusively on prompt API hints ("prompt-crutch overfitting"):** Including exact node/socket hints inside `75/75` training prompts (`c6-gn-sft`) scored `5/6` with the benchmark suffix but collapsed to **`0/4`** Turn-1 pass (`write=2/4`, `repair=False`, `mean <think>=3,236 chars`, `71.1 min` session) on bare Pi-agent prompts (`c6` forgot `bpy.data.node_groups.new(..., "GeometryNodeTree")` + `NodeGroupOutput`). Cycle 7 (`108` rows: `54.6%` bare prompts, `16` Pi `write`, `8` 1-step `edit` repairs, `4` `unload` traces, `16` radial assemblies) jumped bare Pi Turn-1 pass to **`2/4`** (`write=4/4`, `repair=True`, `unload=True`, `mean <think>=127 chars` [`-96%`]), though `r=16` SFT alone traded standard benchmark-suffix `2K` GeoNodes (`5/6` `c6` → `4/6` `c7-ep2` → `3/6` `c7-ep3`), so `config.yaml` stays on `c6-gn-sft` pending either Stage-2 DPPO on `c7` or explicit selection.
+   - **Never condition SFT exclusively on prompt API hints ("prompt-crutch overfitting"):** Including exact node/socket hints inside `75/75` training prompts (`c6-gn-sft`) scored `5/6` with the benchmark suffix but collapsed to **`0/4`** Turn-1 pass (`write=2/4`, `repair=False`, `mean <think>=3,236 chars`, `71.1 min` session) on bare Pi-agent prompts (`c6` forgot `bpy.data.node_groups.new(..., "GeometryNodeTree")` + `NodeGroupOutput`). Cycle 7 (`108` rows: `54.6%` bare prompts, `16` Pi `write`, `8` 1-step `edit` repairs, `4` `unload` traces, `16` radial assemblies) jumped bare Pi Turn-1 pass to **`2/4`** (`write=4/4`, `repair=True`, `unload=True`, `mean <think>=127 chars` [`-96%`]), though `r=16` SFT alone traded standard benchmark-suffix `2K` GeoNodes (`5/6` `c6` → `4/6` `c7-ep2` → `3/6` `c7-ep3`). These c6/c7 scores are historical, adapter-specific results; they do not establish the performance of a different current checkpoint or scale.
 3. **Layer 3 — Mental-Model IR Inside `<think>` (Domain IR → Stock Code):**
    - Rather than free-form prose, train reasoned traces to formulate the domain's native mental model as a compact, typed intermediate representation before emitting stock code.
    - As `qwen27b` diagnosed for Geometry Nodes — *"getting comfortable with pin-based data flow and the 'data is geometry' mental model (vertices/attributes/points/instances are just data types flowing between nodes)"* — the GeoNodes IR is a pin-level DAG checked mentally before lowering to `bpy`:
@@ -147,7 +155,7 @@ When building any API or tool-domain SME LoRA, instantiate these four layers:
 Instantiate the **4-Layer SME Mini-Framework (Section 4)** before curating data:
 1. **Schema & Structural Verifier:** Extract Layer 1 schema truth from the target binary and build a deterministic headless verifier returning `{syntax_ok, exec_ok, reward ∈ [0, 1]}` plus structural domain checks (e.g., `blender_verifier.py` checks headless Blender exit, non-empty scene, rubric hits, and `is_geonodes_pass()` requires `>=1` `GeometryNodeTree`, `>=4` nodes, `>=3` links, `>=32` vertices).
 2. **Boundary Lock & Hard Split Separation:** Enforce Layer 2's flat version/boilerplate contract across every row, and separate **(a) SFT training pool**, **(b) RL prompt bank**, and **(c) held-out eval suite** with automated string/ID anti-leakage checks (`0` shared prompt/concept signatures across all text fields, reasoning included).
-3. **Mode, IR & Budget Alignment:** Format both reasoning-off (`reasoning=""`, `<think>\n\n</think>\n\n`) and Layer 3 IR `<think>` traces cleanly with `/home/nos/scripts/qwen_chat_template.jinja`. Whenever training thinking-budget transitions, include explicit budget-cutoff examples ending with:
+3. **Mode, IR & Budget Alignment:** Format both reasoning-off (`reasoning=""`, `<think>\n\n</think>\n\n`) and Layer 3 IR `<think>` traces cleanly with `scripts/qwen_chat_template.jinja`. Whenever training thinking-budget transitions, include explicit budget-cutoff examples ending with:
    ```text
    [Thinking budget reached. Stop planning and immediately output the complete, executable Blender Python script now.]
    ```
@@ -163,11 +171,11 @@ Instantiate the **4-Layer SME Mini-Framework (Section 4)** before curating data:
 3. **Canonical SFT Command:**
    ```bash
    PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True CUDA_DEVICE_ORDER=FASTEST_FIRST CUDA_VISIBLE_DEVICES=0 \
-   python3 -u /home/nos/scripts/distill-lora/train_lora.py \
-     --data /home/nos/scripts/distill-lora/work/<domain_sft>.jsonl \
+   python3 -u scripts/distill-lora/train_lora.py \
+     --data scripts/distill-lora/work/<domain_sft>.jsonl \
      --max-seq-len 2560 --window-len 512 --epochs 2 --grad-accum 2 \
      --start-layer 32 --rank 16 --alpha 32 --lr 2.2e-4 --shuffle --seed 42 \
-     --peft-out /home/nos/scripts/distill-lora/work/peft_<name>_sft \
+     --peft-out scripts/distill-lora/work/peft_<name>_sft \
      --gguf-out /home/nos/models/Bonsai-2-27B-<name>-sft-Q8_0.gguf
    ```
    *(Pass `--init-peft <prev_peft>` only when continuing the **same** specialist across curriculum cycles.)*
@@ -181,12 +189,12 @@ Run on-policy verifiable RL over **unseen same-domain prompts** anchored to the 
 - **Canonical DPPO RL Command (Single-Domain Specialist):**
   ```bash
   PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True CUDA_DEVICE_ORDER=FASTEST_FIRST CUDA_VISIBLE_DEVICES=0 \
-  python3 -u /home/nos/scripts/distill-lora/online_rl_blender.py \
-    --init-peft /home/nos/scripts/distill-lora/work/peft_<name>_sft \
+  python3 -u scripts/distill-lora/online_rl_blender.py \
+    --init-peft scripts/distill-lora/work/peft_<name>_sft \
     --init-gguf /home/nos/models/Bonsai-2-27B-<name>-sft-Q8_0.gguf \
-    --peft-out /home/nos/scripts/distill-lora/work/peft_<name>_dppo \
+    --peft-out scripts/distill-lora/work/peft_<name>_dppo \
     --gguf-out /home/nos/models/Bonsai-2-27B-<name>-dppo-Q8_0.gguf \
-    --tasks-jsonl /home/nos/scripts/distill-lora/work/<domain_rl_tasks>.jsonl \
+    --tasks-jsonl scripts/distill-lora/work/<domain_rl_tasks>.jsonl \
     --algo dppo --dppo-variant binary_tv --dppo-clip 0.15 --dppo-is-clip 3.0 \
     --dppo-norm-tokens 2048.0 --ref-anchor sft --ppo-epochs 2 --minibatch-size 8 \
     --rounds 2 --tasks-per-round 4 --task-offset 0 --group-size 4 \
@@ -204,10 +212,10 @@ When scaling capability within one domain:
 Use `extract_svd_lora.py` + `optimize_lora.py` when assimilating an existing full-weight `Qwen3.8-27B` / `Qwen3.5-27B` fine-tune (`ΔW = W_finetune - W_base`) rather than training from scratch:
 ```bash
 CUDA_DEVICE_ORDER=FASTEST_FIRST CUDA_VISIBLE_DEVICES=0 \
-python3 -u /home/nos/scripts/extract_svd_lora.py \
+python3 -u scripts/extract_svd_lora.py \
   --base Qwen/Qwen3.8-27B \
   --finetune <org/finetune-27b-or-local-dir> \
-  --out /home/nos/scripts/distill-lora/work/peft_svd \
+  --out scripts/distill-lora/work/peft_svd \
   --gguf-out /home/nos/models/Bonsai-2-27B-svd-r32-Q8_0.gguf \
   --outtype q8_0 --svd-mode gram --rank 32 \
   --hf-cache-dir /run/media/nos/disk/hf-cache-svd --evict-shards
@@ -222,7 +230,7 @@ Before adding any new specialist to `llama-swap` (`qwen27b`), verify all 5 gates
 
 | Gate | Check | Pass Criterion |
 |---|---|---|
-| **A. Quant & V-head integrity** | `python3 /home/nos/scripts/optimize_lora.py <peft-or-gguf> --base Qwen/Qwen3.8-27B -o <out.gguf> --outtype q8_0 --no-balance --verify` | `F16 fallbacks: 0`, `min_cos >= 0.9999` |
+| **A. Quant & V-head integrity** | `python3 scripts/optimize_lora.py <peft-or-gguf> --base Qwen/Qwen3.8-27B -o <out.gguf> --outtype q8_0 --no-balance --verify` | `F16 fallbacks: 0`, `min_cos >= 0.9999` |
 | **B. Standalone held-out eval** | `benchmark_geonodes.py` / `benchmark_blenderworld.py` (`--reasoning-budget 0` and optionally `2048`) | Matches or beats prior best on target domain (`0` leaked tasks) |
 | **C. Norm & orthogonality check** | Frobenius `\|\|ΔW\|\|` and shared-tensor cosine against `pi-lora` + `qwopus-r32` | `\|\|ΔW\|\| ≲ 12.5` and `\|mean cos\| < 0.002` |
 | **D. Stacked 3-LoRA eval** | Stress-test with `--lora pi-lora:1.0,qwopus-r32:1.0,specialist:1.0` + general coherence check | Domain pass preserved cleanly without `length` runaways |
@@ -251,4 +259,4 @@ To train a new hot-swappable SME LoRA (`SQL`, `CadQuery`, `Manim`, `Lean4`, `Thr
 1. Instantiate the **4-Layer SME Mini-Framework (Section 4)** for the target domain (`schema_catalog.json` + flat canonical boundary contract + `<think>` IR convention + structural verifier `<domain>_verifier.py` returning `VerifyResult(syntax_ok, exec_ok, reward, scene_summary, error)` and strict `is_<domain>_pass(vr)`).
 2. Build a `60–150`-row single-execution-model SFT JSONL (`system`, `prompt`, `response[, reasoning]`) + an unseen `rl_tasks.jsonl` + held-out eval suite (`0` lexical/concept overlap).
 3. Run **Stage 1 (`train_lora.py`)** → verify Stage 1 standalone → run **Stage 2 (`online_rl_blender.py` with your verifier, `--algo dppo --ref-anchor sft`)** → verify **Gates A–E (Section 6)**.
-4. Register the new `:0.0` `Q8_0` GGUF in `qwen27b`'s `--lora-scaled` list and toggle it on demand with `../.pi/agent/skills/lora-router/scripts/lora_ctl.py`.
+4. Register the new `:0.0` `Q8_0` GGUF in `qwen27b`'s `--lora-scaled` list and toggle it on demand with `.pi/agent/skills/lora-router/scripts/lora_ctl.py`.

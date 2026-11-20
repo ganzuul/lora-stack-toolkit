@@ -4,8 +4,11 @@
 *.pt
 *.pth
 
-# Local data, outputs, and caches
-work/
+# Local data, outputs, and caches (except the three small reference fixtures)
+**/work/*
+!scripts/distill-lora/work/blender_5_4_gn_schema.json
+!scripts/distill-lora/work/geonodes_eval_suite.json
+!scripts/distill-lora/work/geonodes_rl_tasks.jsonl
 __pycache__/
 *.py[cod]
 .venv/
