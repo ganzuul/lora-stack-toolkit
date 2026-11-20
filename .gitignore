@@ -1,0 +1,12 @@
+# Model weights and exported adapters
+*.gguf
+*.safetensors
+*.pt
+*.pth
+
+# Local data, outputs, and caches
+work/
+__pycache__/
+*.py[cod]
+.venv/
+venv/
